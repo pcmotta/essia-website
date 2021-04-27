@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Revision: 16176 $ $Date: 2014-03-12 02:09:21 +0000 (Wed, 12 Mar 2014) $ -->
+<doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
+	<service>
+		<sources>
+			<source id="default" type="contentTable">
+				<table>ew_livros</table>
+				<fields>
+					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
+					<field id="titulo" name="Título" dataType="string" required="true" isPrimaryName="true" isSearchable="true" />
+					<field id="autor" name="Autor" dataType="string" isSearchable="true" isIntroduction="true" />
+					<field id="capa" name="Capa" dataType="media" required="true" />
+					<field id="colecao" name="Coleção" dataType="string" isSearchable="true" />
+					<field id="disciplina" name="Disciplina" dataType="string" isSearchable="true" >
+						<options>
+							<option value="Geografia">Geografia</option>
+							<option value="História">História</option>
+						</options>
+					</field>
+					<field id="segmento" name="Segmento" dataType="string" isSearchable="true" >
+						<options>
+							<option value="Ensino Fundamental 1">Ensino Fundamental 1</option>
+							<option value="Ensino Fundamental 2">Ensino Fundamental 2</option>
+							<option value="Ensino Médio">Ensino Médio</option>
+						</options>
+					</field>
+					<field id="serie" name="Série" dataType="string" isSearchable="true" >
+						<options>
+							<option value="1 Ano">1 Ano</option>
+							<option value="2 Ano">2 Ano</option>
+						</options>
+					</field>
+					<field id="link" name="Link" dataType="string" required="true" />
+				</fields>
+				<metaData>
+					<comments/>
+					<publishStartDate/>
+					<publishEndDate/>
+					<multiLanguage/>
+					<publishToPrincipals/>
+					<versioning/>
+					<workflow/>
+					<seo/>
+				</metaData>
+				
+			</source>
+			
+		</sources>
+	</service>
+	
+</doui:douiDefinition>

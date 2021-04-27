@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>2C93808A78D9F96F017903E3144226D8</id>
+  <name>Termo de privacidade</name>
+  <description>Serviço de controle de privacidade de usuários, mantendo os dados pessoais dos usuários da plataforma seguros</description>
+  <service-id>lumis.service.privacyterm</service-id>
+  <workflow>lumis.standardworkflow</workflow>
+  <workflow-permissions>
+    <workflow-permission principal-id="00000000C00000000000000000000003">
+      <role type="allow">author</role>
+      <role type="allow">chiefEditor</role>
+      <role type="allow">editor</role>
+    </workflow-permission>
+  </workflow-permissions>
+  <dependencies>
+    <dependency type="document_repository">
+      <service-instance-id>2C93808A78D9F96F017903E30F4B25C7</service-instance-id>
+    </dependency>
+    <dependency type="media_repository">
+      <service-instance-id>2C93808A78D9F96F017903E3135425CD</service-instance-id>
+    </dependency>
+  </dependencies>
+</service-instance>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>2C93808A78D9F96F017903E3137C25D7</id>
+  <name>Essia Website</name>
+  <description>Permite exibir relatórios de dados de monitoramento da solução</description>
+  <service-id>lumis.service.analytics</service-id>
+  <dependencies>
+    <dependency type="privacyterm_repository">
+      <service-instance-id>2C93808A78D9F96F017903E3144226D8</service-instance-id>
+    </dependency>
+  </dependencies>
+</service-instance>

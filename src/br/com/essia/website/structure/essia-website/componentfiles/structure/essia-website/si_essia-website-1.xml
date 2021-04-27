@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>2C93808A78D9F96F017903E315A129F4</id>
+  <name>Essia Website</name>
+  <description>Serviço que cria automaticamente uma área administrativa para instâncias de serviços.</description>
+  <service-id>lumis.service.autoadministration</service-id>
+</service-instance>

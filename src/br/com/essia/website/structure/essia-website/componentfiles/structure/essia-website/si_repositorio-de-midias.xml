@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>2C93808A78D9F96F017903E3135425CD</id>
+  <name>Repositório de Mídias</name>
+  <description>Permite gerenciar um repositório de mídias.</description>
+  <service-id>lumis.service.media</service-id>
+</service-instance>

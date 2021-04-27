@@ -1,0 +1,303 @@
+/*	Medium Layout: 1280px	*/
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    ul li a {
+    font-size: 13px;
+}
+}
+
+
+/*		Tablet Layout: 768px.       */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .main-menu li a {
+        padding: 10px;
+        font-size: 18px;
+    }
+    .admin-bar .site-header {
+        top: 46px;
+    }
+}
+
+
+/*		Tablet and Mobile Layout         */
+
+@media only screen and (max-width: 991px ) {
+    .menu-trigger {
+        width: 50px;
+        padding: 8px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 333;
+        cursor: pointer;
+    }
+    .menu-trigger span {
+        width: 100%;
+        height: 4px;
+        background: #6eb974;
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .mobile-menu li ul {
+        position: absolute;
+        left: 70px;
+        width: 200px;
+        text-align: left;
+        z-index: 2;
+        padding: 5%;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .mobile-menu li li {
+        display: block;
+    }
+    .mobile-menu li li a {
+        padding: 8px;
+        background-color: transparent;
+    }
+    .mobile-menu li:hover ul {
+        opacity: 1;
+        visibility: visible;
+    }
+    .mobile-menu ul li:hover ul ul {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .mobile-menu ul ul li ul {
+        left: 200px;
+    }
+    .mobile-menu ul ul li:hover>ul {
+        top: 0;
+        visibility: visible;
+        opacity: 1;
+    }
+    .single-blog-text {
+        padding-top: 40px;
+    }
+    .result-show h4 {
+        margin-bottom: 15px;
+    }
+    .hero-bg {
+        padding-top: 50px;
+    }
+    .blog-pg .blog-pagination ul.pagination {
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .filter-right{
+        margin-top: 30px;
+    }
+    .about-area-2-content h2{
+        margin-bottom: 60px;
+    }
+    .artigo-single-blogs h3 {
+        font-size: 20px;    
+    }
+    .artigo-single-blogs p {
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .artigo-blog-title h2 {
+        font-size: 40px;
+        line-height: 52px;
+    }.artigo-blog-title h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .artigo-blog-item-area-4 h3, .artigo-blog-item-area-5 h3{
+        font-size: 20px;
+    }
+    .artigo-bg-inner-text h2 {
+        font-size: 46px;
+        line-height: 53px;
+    }
+    .artigo-about-img {
+        margin-bottom: 30px;
+    }
+    .com-plataform-area {
+        background: unset;
+        background-color: #6eb974;
+        padding: 80px 0 60px;
+    }
+    .conteudo-1 .conteudo-tex h2,
+    .conteudo-2 .conteudo-tex h2,
+    .conteudo-3 .conteudo-tex h2 {
+        margin-top: 30px;
+    }
+    .conteudo-area .col-lg-6:last-child {
+        padding-left: 3%;
+        max-width: 600px;
+    }
+}
+
+
+/*		Mobile Layout: 320px.         */
+
+@media only screen and (max-width: 767px) {
+    .site-header {
+        position: relative;
+        z-index: 255;
+    }
+    .site-logo {
+        padding-right: 60px;
+        position: relative;
+    }
+    .site-logo img {
+        max-width: 150px;
+    }
+    section.search-result-sec {
+        margin-top: 0;
+    }
+    .section-title h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+    section.hero-area {
+        padding-top: unset;
+    }
+    .hero-content .blog-title {
+        font-size: 40px;
+    }
+    .hero-content .blog-date,
+    .hero-content .s-category {
+        font-size: 14px;
+    }
+    .hero-content p {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .blog-btn-sec a.btn.blog-btn {
+        font-weight: 600;
+        font-size: 18px;
+        padding: 3px 15px;
+    }
+    .blog-pg-search .section-title,
+    .blog-pg-search .section-title h2 {
+        text-align: left;
+    }
+    .full-article h2 {
+        font-size: 24px;
+    }
+    .page-item {
+        padding: 5px 2px;
+    }
+    .full-article {
+        padding: 20px 10px;
+    }
+    section.search-result-sec {
+        padding-top: 50px;
+    }
+    .banner_area.blog-banner{
+        padding-top: 100px;
+        padding: 150px 0;
+    }
+    .blog-main-title p{
+        font-size: 23px;
+        line-height: 32px;
+    }
+    .artigo-single-blogs {
+        margin-top: 10px;
+    }
+   .artigo-single-blogs h3 {
+        margin-bottom: 8px;
+        font-size: 22px;
+        line-height: 24px;
+    }
+    .banner_area.artigo-banner {
+        padding: 120px 0;
+        padding-top: 135px;
+    }
+    .banner h1 {
+        font-size: 46px;
+        line-height: 1em;
+    }
+    .artigo-about-title h2 {
+        font-size: 38px;
+        line-height: 34px;
+    }
+    .artigo-single-inner p {
+        font-size: 22px;
+    }
+    .about-area-2-content h2 {
+        font-size: 38px;
+        line-height: 46px;
+
+    }
+    .artigo-blog-title {
+        max-width: 475px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .com-plataform .col-lg-6 {
+        margin-bottom: 40px;
+    }
+    .com-plt-last-item{
+        margin-top: 40px;
+    }
+    .contact-form_area {
+        padding: 80px 0;
+        padding-top: 90px;
+    }
+    .banner_area.clientes-area {
+        padding: 90px 0;
+        padding-top: 120px;
+    }
+    .encolas-heading-title p {
+        font-size: 21px;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+    .conteudo-1 .conteudo-tex h2,
+    .conteudo-2 .conteudo-tex h2,
+    .conteudo-3 .conteudo-tex h2  {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    .banner_area.conteudo-area {
+        padding: 90px 0;
+        padding-top: 103px;
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .banner_area.blog-banner {
+        padding-top: 62px;
+        padding: 100px 0;
+    }
+    .artigo-blog-items {
+        max-width: 360px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    .artigo-single-blogs h3 {
+        margin-bottom: 8px;
+    }
+    .banner h1 {
+        font-size: 36px;
+        line-height: 1em;
+    }
+    .conteudo-tex .btn_style_1{
+        font-size: 20px;
+        padding: 8px 18px;
+    }
+}
+/*		Wide Mobile Layout: 480px.        */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    /* css */
+}
+
+
+/*	Retina media query.
+	Overrides styles for devices with a 
+	device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+    /* css */
+}

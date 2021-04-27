@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>2C93808A78D9F96F01790402F05D4F3F</id>
+  <name>Menu Principal</name>
+  <description>Permite gerenciar conteúdos hierárquicos no portal.</description>
+  <service-id>lumis.service.hierarchicalcontent</service-id>
+  <workflow>lumis.standardworkflow</workflow>
+  <workflow-permissions>
+    <workflow-permission principal-id="00000000C00000000000000000000003">
+      <role type="allow">author</role>
+      <role type="allow">chiefEditor</role>
+      <role type="allow">editor</role>
+    </workflow-permission>
+  </workflow-permissions>
+  <dependencies>
+    <dependency type="document_repository">
+      <service-instance-id>2C93808A78D9F96F017903E30F4B25C7</service-instance-id>
+    </dependency>
+    <dependency type="media_repository">
+      <service-instance-id>2C93808A78D9F96F017903E3135425CD</service-instance-id>
+    </dependency>
+    <dependency type="widget_repository">
+      <service-instance-id>2C93808A78D9F96F01790448EF80679B</service-instance-id>
+    </dependency>
+  </dependencies>
+</service-instance>

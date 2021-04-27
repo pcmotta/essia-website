@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel version="7.0">
+  <id>2C93808A78D9F96F017903E30F3A25C2</id>
+  <parent-id>00000000F00000000000000000000001</parent-id>
+  <name>Essia Website</name>
+  <default-page-template-id>2C93808A78D9F96F017903E316192A29</default-page-template-id>
+  <inherit-page-template>false</inherit-page-template>
+  <inherit-stylesheet>false</inherit-stylesheet>
+  <local-group-prefix>essia-website</local-group-prefix>
+  <cache-pages>ENABLED</cache-pages>
+  <access-control-list>
+    <entries>
+      <entry principal-id="2C93808A78D9F96F017903E316652A38">
+        <allow-permissions>622848</allow-permissions>
+      </entry>
+    </entries>
+  </access-control-list>
+  <property-bag>
+    <property name="lumis.doui.ckeditor.contentscss">
+      <default-values>
+        <value>style.css</value>
+      </default-values>
+    </property>
+    <property name="lumis.portal.areatag">
+      <private>true</private>
+      <default-values/>
+    </property>
+  </property-bag>
+  <inherit-theme>false</inherit-theme>
+  <themes>
+    <theme>br.com.essia.website.theme.essia-website</theme>
+  </themes>
+  <locale>
+    <supported-locales>
+      <locale>pt_BR</locale>
+    </supported-locales>
+  </locale>
+  <groups>
+    <group alias="publishers">
+      <id>2C93808A78D9F96F017903E316652A38</id>
+      <name>STR_PORTAL_PUBLISHERS_GROUP_NAME</name>
+    </group>
+  </groups>
+</channel>

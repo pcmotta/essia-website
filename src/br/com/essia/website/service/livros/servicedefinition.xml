@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Revision: 16708 $ $Date: 2014-12-11 00:12:36 +0000 (Thu, 11 Dec 2014) $ -->
+<serviceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/servicedefinition.xsd">
+
+	<service name="STR_SERVICE_NAME" type="lum_content">
+		<description>STR_SERVICE_DESCRIPTION</description>
+		<workflow enabled="true"/>	
+	</service>
+
+	<interfaces>
+		
+		<!-- user interfaces -->
+
+		<interface id="quicklist" name="STR_QUICK_LIST" type="lum_contentQuickList">
+		</interface>
+
+		<interface id="list" name="STR_LIST" type="lum_contentList">
+		</interface>
+		
+		<interface id="details" name="STR_DETAILS" type="lum_contentDetails"/>
+		
+		<!-- administration interfaces -->
+
+		<interface id="administration" name="STR_ADMINISTRATION" type="lum_contentAdministrationList">
+		</interface>
+
+		<interface id="add" name="STR_ADD" type="lum_contentAdministrationAddPropertyPage">
+		</interface>
+		
+		<interface id="edit" name="STR_EDIT" type="lum_contentAdministrationEditPropertyPage">
+		</interface>
+				
+	</interfaces>
+
+</serviceDefinition>

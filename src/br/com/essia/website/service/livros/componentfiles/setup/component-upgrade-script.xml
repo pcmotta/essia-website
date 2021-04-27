@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Revision: 16582 $ $Date: 2014-11-07 13:18:31 +0000 (Fri, 07 Nov 2014) $ -->
+<component-upgrade xmlns="http://www.lumis.com.br/lumisportal/xsd/component-upgrade-script" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<display-message step="1">
+		<message>Ok</message>
+	</display-message>
+</component-upgrade>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface-style version="7.0">
+  <id>2C93808A78D9F96F017904158AE55B6A</id>
+  <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
+  <name>Essia Website-Menu Footer</name>
+  <file-path>style/lumis/service/hierarchicalcontent/contentMenu/essia-website-menu-footer.js</file-path>
+  <isolation-level>SHARED</isolation-level>
+  <allowed-consumers>
+    <service-instance-id>2C93808A78D9F96F0179041502355B38</service-instance-id>
+  </allowed-consumers>
+</interface-style>
