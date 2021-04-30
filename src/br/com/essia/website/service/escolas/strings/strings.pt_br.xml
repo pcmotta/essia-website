@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+	<string id="STR_SERVICE_NAME"><![CDATA[Escolas]]></string>
+	<string id="STR_SERVICE_DESCRIPTION"><![CDATA[Permite cadastrar Escolas]]></string>
+	
+	<string id="STR_LISTA"><![CDATA[Lista de Escolas]]></string>
+	<string id="STR_LISTA_DESTAQUES"><![CDATA[Lista de Escolas em Destaque]]></string>
+</strings>

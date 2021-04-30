@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- $Revision: 16445 $ $Date: 2014-09-18 21:21:12 +0000 (Thu, 18 Sep 2014) $ -->
-<lumis-component xmlns="http://www.lumis.com.br/lumisportal/xsd/component" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lumis.com.br/lumisportal/xsd/component http://www.lumis.com.br/lumisportal/xsd/component">
-  <version>1.0.0.0</version>
-  <description>livros</description>
-</lumis-component>

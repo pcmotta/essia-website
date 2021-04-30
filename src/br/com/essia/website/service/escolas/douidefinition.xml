@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
+	<service>
+		<sources>
+			<source id="escolas" type="contentTable">
+				<table>ew_escolas</table>
+				<fields>
+					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
+					<field id="nome" name="nome" dataType="string" required="true" />
+					<field id="logo" name="logo" dataType="media" required="true" />
+					<field id="cidade" name="cidade" dataType="string" required="true" />
+					<field id="estado" name="estado" dataType="string" required="true" />
+					<field id="posicao" name="posicao" dataType="integer" required="true" defaultValue="1" />
+				</fields>
+				<metaData>
+					<workflow/>
+					<highlight/>
+				</metaData>
+			</source>
+		</sources>
+	</service>
+	
+	<interfaces>
+		<interface id="list">
+			<sources>
+				<source id="escolas">
+					<fields inherit="all" />
+					<orderBy>
+						<field direction="descending" id="highlight" />
+						<field direction="ascending" id="posicao" />
+					</orderBy>
+					<maxRows>-1</maxRows>
+				</source>
+			</sources>
+		</interface>
+		
+		<interface id="listHighlights">
+			<sources>
+				<source id="escolas">
+					<fields inherit="all" />
+					<filters>
+						<filter id="highlight" value="true" />
+					</filters>
+					<orderBy>
+						<field direction="ascending" id="posicao" />
+					</orderBy>
+					<maxRows>-1</maxRows>
+				</source>
+			</sources>
+		</interface>
+		
+		<interface id="administration">
+			<sources>
+				<source id="escolas">
+					<fields>
+						<field id="nome" name="Nome" />
+						<field id="cidade" name="Cidade" />
+						<field id="estado" name="Estado" />
+						<field id="posicao" name="Posição" />
+						<field id="highlight" name="Destaque" doOptionLookup="true">
+							<options>
+								<option value="true">Sim</option>
+								<option value="false">Não</option>
+							</options>
+						</field>
+						<field id="lastModifiedDate" display="true" />
+					</fields>
+					<filters>
+						<filter id="nome" operator="like" />
+						<filter id="cidade" operator="like" />
+						<filter id="estado" showItems="all" />
+						<filter id="highlight" showItems="all" />
+					</filters>
+					<orderBy>
+						<field direction="descending" id="highlight" />
+						<field direction="ascending" id="posicao" />
+					</orderBy>
+				</source>
+			</sources>
+		</interface>
+	</interfaces>
+</doui:douiDefinition>

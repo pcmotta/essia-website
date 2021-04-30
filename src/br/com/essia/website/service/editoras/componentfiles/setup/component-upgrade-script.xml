@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-upgrade xmlns="http://www.lumis.com.br/lumisportal/xsd/component-upgrade-script" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<display-message step="1">
+		<message>Ok</message>
+	</display-message>
+	
+	<run-sql step="2">
+		<sql>ALTER TABLE ew_editoras ADD corTexto VARCHAR(7) DEFAULT '#FFF' NOT NULL AFTER cor</sql>
+	</run-sql>
+	
+	<run-sql step="3">
+		<sql>
+		CREATE TABLE ew_livros (
+			id CHAR(32) NOT NULL PRIMARY KEY,
+			titulo VARCHAR(255) NOT NULL,
+			autor VARCHAR(255) DEFAULT NULL,
+			capa CHAR(32) NOT NULL,
+			colecao VARCHAR(255) DEFAULT NULL,
+			disciplina VARCHAR(255) DEFAULT NULL,
+			segmento VARCHAR(255) DEFAULT NULL,
+			serie VARCHAR(255) DEFAULT NULL,
+			link VARCHAR(255) NOT NULL,
+			editoraId CHAR(32) NOT NULL,
+			CONSTRAINT `ew_livros_editora_FK` FOREIGN KEY (editoraId) REFERENCES ew_editoras (id) ON DELETE RESTRICT ON UPDATE CASCADE
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+		</sql>
+	</run-sql>
+</component-upgrade>

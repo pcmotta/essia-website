@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
+	<service>
+		<sources>
+			<source id="editoras" type="table">
+				<table>ew_editoras</table>
+				<fields>
+					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
+					<field id="nome" name="Nome" dataType="string" required="true" isPrimaryName="true" />
+					<field id="logo" name="Logo" dataType="media" required="true" />
+					<field id="imagemSecundaria" name="Imagem Secundária" dataType="media" />
+					<field id="bannerDetalhe" name="Banner Detalhe" dataType="media" required="true" />
+					<field id="logoDetalhe" name="Logo Detalhe" dataType="media" required="true" />
+					<field id="texto" name="Texto" dataType="text" required="true" />
+					<field id="textoDetalhe" name="Texto Detalhe" dataType="text" required="true" />
+					<field id="cor" name="Cor" dataType="string" required="true" />
+					<field id="corTexto" name="Cor do Texto" dataType="string" defaultValue="#FFF" />
+					<field id="posicao" name="Posição" dataType="integer" required="true" defaultValue="1" />
+				</fields>
+			</source>
+			<source id="livros" type="contentTable">
+				<table>ew_livros</table>
+				<fields>
+					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
+					<field id="titulo" name="Título" dataType="string" required="true" isPrimaryName="true" isSearchable="true" />
+					<field id="autor" name="Autor" dataType="string" isSearchable="true" isIntroduction="true" />
+					<field id="capa" name="Capa" dataType="media" required="true" />
+					<field id="colecao" name="Coleção" dataType="string" isSearchable="true" />
+					<field id="disciplina" name="Disciplina" dataType="string" isSearchable="true" >
+						<options>
+							<option value="Geografia">Geografia</option>
+							<option value="História">História</option>
+						</options>
+					</field>
+					<field id="segmento" name="Segmento" dataType="string" isSearchable="true" >
+						<options>
+							<option value="Ensino Fundamental 1">Ensino Fundamental 1</option>
+							<option value="Ensino Fundamental 2">Ensino Fundamental 2</option>
+							<option value="Ensino Médio">Ensino Médio</option>
+						</options>
+					</field>
+					<field id="serie" name="Série" dataType="string" isSearchable="true" >
+						<options>
+							<option value="1 Ano">1 Ano</option>
+							<option value="2 Ano">2 Ano</option>
+						</options>
+					</field>
+					<field id="link" name="Link" dataType="string" required="true" />
+					<field id="editoraId" name="Editora" dataType="guid" required="true" lookupRelationId="editora" lookupFieldId="nome" />
+				</fields>
+				<metaData>
+					<multiLanguage/>
+					<workflow/>
+					<seo/>
+				</metaData>
+				<relations>
+					<relation id="editora" foreignSourceId="editoras">
+						<relationField fieldId="editoraId" foreignFieldId="id" />
+					</relation>
+				</relations>
+			</source>
+		</sources> 
+	</service>
+	
+	<interfaces>
+		<interface id="list">
+			<sources>
+				<source id="editoras">
+					<fields>
+						<field id="nome" />
+						<field id="logo" />
+						<field id="imagemSecundaria" />
+						<field id="texto" />
+						<field id="cor" />
+						<field id="corTexto" />
+					</fields>
+					<orderBy>
+						<field direction="ascending" id="posicao" />
+					</orderBy>
+					<maxRows>-1</maxRows>
+				</source>
+			</sources>
+		</interface>
+		
+		<interface id="detalhe">
+			<sources>
+				<source id="editoras">
+					<fields>
+						<field id="logoDetalhe" />
+						<field id="bannerDetalhe" />
+						<field id="textoDetalhe" />
+					</fields>
+					<filters>
+						<filter id="id" requestParameterName="itemId" operator="equal" />
+					</filters>
+				</source>
+				<source id="livros" readData="always">
+					<fields inherit="all" />
+					<filters>
+						<filter id="editoraId" requestParameterName="itemId" />
+					</filters>
+				</source>
+			</sources>
+			<controls>
+				<control:lum_autoLayoutDetails sourceId="editoras" />
+				<control:lum_list sourceId="livros" />
+			</controls>
+		</interface>
+		
+		<interface id="administration">
+			<sources>
+				<source id="editoras">
+					<fields>
+						<field id="nome" />
+						<field id="posicao" />
+					</fields>
+					<filters>
+						<filter id="nome" operator="like" />
+					</filters>
+				</source>
+			</sources>
+		</interface>
+		
+		<interface id="add">
+			<sources>
+				<source id="editoras" />
+			</sources>
+			<controls>
+				<control:lum_form>
+					<control:lum_propertyPage>
+						<control:lum_controlGroup title="STR_BASIC_INFORMATION" visualAid="true">
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="nome" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputText id="nome"/>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="logo" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="logo" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="imagemSecundaria" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="imagemSecundaria" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="bannerDetalhe" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="bannerDetalhe" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="logoDetalhe" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="logoDetalhe" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="texto" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputTextArea id="texto"/>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="textoDetalhe" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputTextArea id="textoDetalhe"/>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="cor" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value" style="width: 115px;">
+							 		<control:lum_inputText id="cor" style="width: 70px;"/>
+							 		<control:lum_div id="colorSelector" style="float: right;">
+										<control:lum_div/>
+									</control:lum_div>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="corTexto" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value" style="width: 115px;">
+							 		<control:lum_inputText id="corTexto" style="width: 70px;"/>
+							 		<control:lum_div id="colorTextSelector" class="colorSelector" style="float: right;">
+										<control:lum_div/>
+									</control:lum_div>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="posicao" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputNumber id="posicao" />
+								</control:lum_div>
+							</control:lum_div>
+						</control:lum_controlGroup>
+					</control:lum_propertyPage>
+					
+					<control:lum_script id="colorScript">
+						<script/>
+					</control:lum_script>
+				</control:lum_form>
+			</controls>
+		</interface>
+		
+		<interface id="edit">
+			<sources>
+				<source id="editoras" />
+			</sources>
+			<controls>
+				<control:lum_form>
+					<control:lum_propertyPage>
+						<control:lum_filters id="default.filters"/>
+						<control:lum_inputHidden id="id"/>
+						<control:lum_controlGroup title="STR_BASIC_INFORMATION" visualAid="true">
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="nome" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputText id="nome"/>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="logo" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="logo" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="imagemSecundaria" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="imagemSecundaria" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="bannerDetalhe" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="bannerDetalhe" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="logoDetalhe" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_mediaPicker id="logoDetalhe" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="texto" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputTextArea id="texto"/>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="textoDetalhe" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputTextArea id="textoDetalhe"/>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="cor" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value" style="width: 115px;">
+							 		<control:lum_inputText id="cor" style="width: 70px;"/>
+							 		<control:lum_div id="colorSelector" style="float: right;">
+										<control:lum_div/>
+									</control:lum_div>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="corTexto" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value" style="width: 115px;">
+							 		<control:lum_inputText id="corTexto" style="width: 70px;"/>
+							 		<control:lum_div id="colorTextSelector" class="colorSelector" style="float: right;">
+										<control:lum_div/>
+									</control:lum_div>
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="posicao" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_inputNumber id="posicao" />
+								</control:lum_div>
+							</control:lum_div>
+						</control:lum_controlGroup>
+					</control:lum_propertyPage>
+					
+					<control:lum_script id="colorScript">
+						<script/>
+					</control:lum_script>
+				</control:lum_form>
+			</controls>
+		</interface>
+
+		<interface id="administrationLivros">
+			<sources>
+				<source id="livros">
+					<fields>
+						<field id="titulo" />
+						<field id="autor" />
+						<field id="workflowState" doLookup="true" />
+						<field id="lastModifiedDate" display="true" />
+					</fields>
+					<filters>
+						<filter id="titulo" operator="like" />
+						<filter id="autor" operator="like" />
+						<filter id="workflowState" doLookup="true" />
+					</filters>
+				</source>
+			</sources>
+		</interface>
+
+		<interface id="addLivros">
+			<sources>
+				<source id="livros">
+					<fields inherit="all">
+						<field id="editoraId" doOptionLookup="true" />
+					</fields>
+				</source>
+				<source id="editoras" />
+			</sources>
+		</interface>
+		
+		<interface id="editLivros">
+			<!-- #include(xpath: "/doui:douiDefinition/interfaces/interface[@id='addLivros']/sources") -->
+		</interface>
+	</interfaces>
+</doui:douiDefinition>

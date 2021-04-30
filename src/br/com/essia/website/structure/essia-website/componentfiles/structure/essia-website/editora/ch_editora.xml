@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel version="7.0">
+  <id>4028817279147A0001791A3EBDBC1CA5</id>
+  <name>Editora</name>
+  <cache-pages>ENABLED</cache-pages>
+  <locale>
+    <detect-locale-from-user-browser>false</detect-locale-from-user-browser>
+    <supported-locales>
+      <locale>pt_BR</locale>
+    </supported-locales>
+  </locale>
+</channel>

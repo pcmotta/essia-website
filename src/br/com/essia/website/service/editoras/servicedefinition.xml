@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/servicedefinition.xsd">
+  <service name="STR_SERVICE_NAME" type="lum_content">
+  	<description>STR_SERVICE_DESCRIPTION</description>
+  	<workflow enabled="true" />
+  </service>
+  
+  <interfaces>
+  
+  	<interface name="STR_LISTA" id="list" type="lum_douiList">
+  		<styles>
+  			<style name="STR_LISTA" path="styles/list.js" id="list" isDefault="true" />
+  		</styles>
+  	</interface>
+  	
+  	<interface name="STR_DETALHE" id="detalhe" type="lum_douiDetails">
+  		<styles>
+  			<style name="STR_DETALHE" path="styles/detalhe.js" id="detalhe" />
+  		</styles>
+  	</interface>
+  	
+  	<!-- administration interfaces -->
+
+	<interface id="administration" name="STR_ADMINISTRATION" type="lum_douiAdministrationList" />
+	
+	<interface id="add" name="STR_ADD" type="lum_douiAdministrationAddPropertyPage">
+		<styles>
+			<style name="STR_ADD" path="styles/addEdit.xsl" id="add" isDefault="true" />
+		</styles>
+	</interface>
+	<interface id="edit" name="STR_EDIT" type="lum_douiAdministrationEditPropertyPage">
+		<styles>
+			<style name="STR_EDIT" path="styles/addEdit.xsl" id="edit" isDefault="true" />
+		</styles>
+	</interface>
+  
+	<interface name="STR_ADMINISTRATION_LIVROS" id="administrationLivros" type="lum_contentAdministrationList" />
+	<interface name="STR_ADD_LIVROS" id="addLivros" type="lum_contentAdministrationAddPropertyPage" />
+	<interface name="STR_EDIT_LIVROS" id="editLivros" type="lum_contentAdministrationEditPropertyPage" />
+  </interfaces>
+</serviceDefinition>

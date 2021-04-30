@@ -1,52 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page version="7.0">
-  <id>2C93808A78D9F96F017904055A7F4F7A</id>
-  <name>Menu Conteúdo</name>
+  <id>4028817279230BEC017924CEE6E14205</id>
+  <name>Editora</name>
   <parent-template-id>2C93808A78D9F96F017903E316192A29</parent-template-id>
   <hidden>true</hidden>
-  <position>1</position>
   <layout-type>LAYOUT_FILE</layout-type>
   <layout-file>template.html</layout-file>
-  <layout><![CDATA[<layout>
-    <holder id="header">
-        <interface id="2C93808A78D9F96F017904055A844F80"></interface>
-    </holder>
-    <holder id="content">
-        <interface id="2C93808A78D9F96F01790405C4E54FBE"></interface>
-        <interface id="2C93808A78D9F96F017904055A854F81"></interface>
-    </holder>
-    <holder id="footermenu">
-        <interface id="4028817279147A00017919EB872D0D16"></interface>
-    </holder>
-</layout>]]></layout>
+  <layout><![CDATA[<layout><holder id="header"><interface id="4028817279230BEC017924CEE6F6420B"/></holder><holder id="content"><interface id="4028817279230BEC017924CF04B14238"/><interface id="4028817279230BEC017924CEE6FA420C"/></holder><holder id="footermenu"><interface id="4028817279230BEC017924CEE6FF420D"/></holder></layout>]]></layout>
   <interface-instances>
     <interface-instance>
-      <id>2C93808A78D9F96F017904055A844F80</id>
+      <id>4028817279230BEC017924CEE6F6420B</id>
       <service-instance-id>2C93808A78D9F96F01790402F05D4F3F</service-instance-id>
       <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
       <parent-interface-instance-id>2C93808A78D9F96F01790403129B4F53</parent-interface-instance-id>
       <applied-interface-style-id>2C93808A78D9F96F0179040689B24FE3</applied-interface-style-id>
-      <custom-properties>
-        <custom-property name="default.doui_filters">&lt;filters&gt;&lt;filter filterType=&quot;basic&quot; id=&quot;position_filter&quot; fieldId=&quot;position&quot; operator=&quot;greaterThan&quot; defaultValue=&quot;0&quot;/&gt;&lt;/filters&gt;</custom-property>
-      </custom-properties>
     </interface-instance>
     <interface-instance>
-      <id>2C93808A78D9F96F017904055A854F81</id>
+      <id>4028817279230BEC017924CEE6FA420C</id>
       <interface-id>lumis.service.portalmanagement.serviceinterfaceinstance.interfaceHolder</interface-id>
       <parent-interface-instance-id>2C93808A78D9F96F017903E316292A33</parent-interface-instance-id>
       <holder-priority>1</holder-priority>
     </interface-instance>
     <interface-instance>
-      <id>2C93808A78D9F96F01790405C4E54FBE</id>
-      <service-instance-id>2C93808A78D9F96F01790402F05D4F3F</service-instance-id>
-      <interface-id>lumis.service.hierarchicalcontent.contentDetails</interface-id>
-    </interface-instance>
-    <interface-instance>
-      <id>4028817279147A00017919EB872D0D16</id>
+      <id>4028817279230BEC017924CEE6FF420D</id>
       <service-instance-id>2C93808A78D9F96F01790402F05D4F3F</service-instance-id>
       <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
       <parent-interface-instance-id>4028817279147A00017919E4821F05E5</parent-interface-instance-id>
       <applied-interface-style-id>4028817279147A00017919E3A1E7003D</applied-interface-style-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279230BEC017924CF04B14238</id>
+      <service-instance-id>40288172791ECE8F01791ED9436C0705</service-instance-id>
+      <interface-id>br.com.essia.website.service.editoras.detalhe</interface-id>
     </interface-instance>
   </interface-instances>
 </page>

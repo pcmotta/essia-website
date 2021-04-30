@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-upgrade xmlns="http://www.lumis.com.br/lumisportal/xsd/component-upgrade-script" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<display-message step="1">
+		<message>Ok</message>
+	</display-message>
+	
+	<run-sql step="2">
+		<sql>ALTER TABLE ew_escolas ADD ordem INT NOT NULL AFTER estado</sql>
+	</run-sql>
+	<run-sql step="3">
+		<sql>ALTER TABLE ew_escolas CHANGE ordem posicao INT</sql>
+	</run-sql>
+</component-upgrade>

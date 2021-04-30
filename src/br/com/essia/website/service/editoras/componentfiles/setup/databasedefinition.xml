@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/databasedefinition.xsd">
+
+	<table name="ew_editoras">
+		<fields>
+			<field name="id" type="guid" isNotNull="true" />
+			<field name="nome" type="string" isNotNull="true" />
+			<field name="logo" type="guid" isNotNull="true" />
+			<field name="imagemSecundaria" type="guid" />
+			<field name="bannerDetalhe" type="guid" isNotNull="true" />
+			<field name="logoDetalhe" type="guid" isNotNull="true" />
+			<field name="texto" type="text" isNotNull="true" />
+			<field name="textoDetalhe" type="text" isNotNull="true" />
+			<field name="cor" type="string" isNotNull="true" />
+			<field name="corTexto" type="string" />
+			<field name="posicao" type="integer" isNotNull="true" />
+		</fields>
+		<constraints>
+			<constraint name="ew_editoras_PK" type="primaryKey">
+				<fields>
+					<field name="id" />
+				</fields>
+			</constraint>
+		</constraints>
+	</table>
+	
+	<table name="ew_livros">
+		<fields>
+			<field name="id" type="guid" isNotNull="true" />
+			<field name="titulo" type="string" isNotNull="true" />
+			<field name="autor" type="string" />
+			<field name="capa" type="guid" isNotNull="true" />
+			<field name="colecao" type="string" />
+			<field name="disciplina" type="string" />
+			<field name="segmento" type="string" />
+			<field name="serie" type="string" />
+			<field name="link" type="string" isNotNull="true" />
+			<field name="editoraId" type="guid" isNotNull="true" />
+		</fields>
+		<constraints>
+			<constraint name="ew_livros_PK" type="primaryKey">
+				<fields>
+					<field name="id"/>
+				</fields>
+			</constraint>
+			<constraint name="ew_livros_editora_FK" type="foreignKey">
+				<fields>
+					<field name="editoraId" />
+				</fields>
+				<references table="ew_editoras">
+					<fields>
+						<field name="id" />
+					</fields>
+				</references>
+			</constraint>
+		</constraints>
+	</table>
+	
+</databaseDefinition>

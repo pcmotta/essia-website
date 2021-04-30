@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-install xmlns="http://www.lumis.com.br/lumisportal/xsd/component-install-script" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<execute-database-file>
+		<file>databasedefinition.xml</file>
+	</execute-database-file>
+</component-install>

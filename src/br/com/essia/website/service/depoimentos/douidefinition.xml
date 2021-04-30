@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
+	
+	<service>
+		<sources>
+			<source id="depoimentos" type="contentTable">
+				<table>ew_depoimentos</table>
+				<fields>
+					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" />
+					<field id="nome" name="Nome" dataType="string" required="true" />
+					<field id="foto" name="Foto" dataType="media" required="true" />
+					<field id="texto" name="Texto" dataType="text" required="true" />
+					<field id="funcao" name="Função" dataType="string" />
+					<field id="posicao" name="Posição" dataType="integer" defaultValue="1" required="true" />
+				</fields>
+				<metaData>
+					<workflow/>
+				</metaData>
+			</source>
+		</sources>
+	</service>
+	
+	<interfaces>
+		<interface id="list">
+			<sources>
+				<source id="depoimentos">
+					<fields inherit="all" />
+					<orderBy>
+						<field direction="ascending" id="posicao" />
+					</orderBy>
+					<maxRows>-1</maxRows>
+				</source>
+			</sources>
+		</interface>
+		
+		<interface id="administration">
+			<sources>
+				<source id="depoimentos">
+					<fields>
+						<field id="nome" name="Nome" />
+						<field id="funcao" name="Função" />
+						<field id="posicao" name="Posição" />
+						<field id="workflowState" />
+						<field id="lastModifiedDate" display="true" />
+					</fields>
+					<filters>
+						<filter id="nome" operator="like" />
+						<filter id="funcao" operator="like" />
+						<filter id="workflowState" />
+					</filters>
+					<orderBy>
+						<field direction="ascending" id="posicao" />
+					</orderBy>
+				</source>
+			</sources>
+		</interface>
+	</interfaces>
+
+</doui:douiDefinition>

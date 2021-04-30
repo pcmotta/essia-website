@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/databasedefinition.xsd">
+
+	<table name="ew_depoimentos">
+		<fields>
+			<field name="id" type="guid" isNotNull="true" />
+			<field name="nome" type="string" isNotNull="true" />
+			<field name="foto" type="guid" isNotNull="true" />
+			<field name="texto" type="text" isNotNull="true" />
+			<field name="funcao" type="string" />
+			<field name="posicao" type="integer" isNotNull="true" />
+		</fields>
+		<constraints>
+			<constraint name="ew_depoimentos_PK" type="primaryKey">
+				<fields>
+					<field name="id" />
+				</fields>
+			</constraint>
+		</constraints>
+	</table>
+
+</databaseDefinition>
