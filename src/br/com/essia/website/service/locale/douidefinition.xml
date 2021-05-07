@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Revision: 18911 $ $Date: 2016-05-22 18:14:24 +0000 (Sun, 22 May 2016) $ -->
+<doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui" xmlns:control="http://www.lumis.com.br/douicontrols">
+	<service>
+		<sources>
+			<source id="customString" type="table" name="STR_SOURCE_CUSTOM_STRING">
+				<table>lum_CustomString</table>
+				<fields>
+					<field id="customStringId" display="false" name="STR_ID" dataType="string" isPrimaryKey="true" required="true"/>
+					<field id="stringId" name="STR_STRING_ID" dataType="string" isPrimaryName="true" required="true"/>
+					<field id="string" name="STR_TRANSLATION" dataType="html" required="true"/>
+					<field id="resourcePath" name="STR_PAGE" dataType="string" required="true"/>
+					<field id="localeCode" name="STR_LOCALE" dataType="string" required="true" defaultValue="pt_BR"/>
+					<field id="status" name="STR_STATUS" dataType="integer" required="true" defaultValue="1"/>
+				</fields>
+			</source>
+		</sources>
+	</service>
+		
+	<interfaces>
+		<interface id="adminCustomString">
+			<sources>
+				<source id="customString">
+					<fields>
+						<field id="stringId"/>
+						<field id="string"/>
+						<field id="resourcePath" dataType="lumisPage"/>
+					</fields>
+					<filters>
+						<filter id="stringId" operator="like"/>
+						<filter id="resourcePath">
+							<defaultInputControl>
+								<control:lum_selectPage id="resourcePath"/>
+							</defaultInputControl>
+						</filter>
+					</filters>
+				</source>
+			</sources>
+			<controls>
+				<control:lum_form>
+					<control:lum_interfaceHeader />
+					<control:lum_interfaceHeaderButtons>
+						<control:lum_addButton id="buttonAdd" interfaceId="addStrings" isPrimary="true"/>
+						<control:lum_editButton id="buttonEdit" interfaceId="editStrings"/>
+						<control:lum_deleteButton id="buttonDelete" processActionId="delete"/>
+						<control:lum_button id="clearCache" text="STR_CLEAR_CACHE">
+							<documentation ignore="true" />
+							<image>lumis/portal/client/images/ClearCash.gif</image>
+							<onClick type="script">
+								<script><![CDATA[if(!confirm('<lum:translate>STR_CONFIRM_CLEAR_CACHE</lum:translate>')) return;]]></script>
+							</onClick>
+							<onClick type="processAction" processActionId="clearCache" />
+						</control:lum_button>
+					</control:lum_interfaceHeaderButtons>
+					<control:lum_adminList sourceId="customString" id="customStringId"/>
+				</control:lum_form>
+			</controls>
+			<processActions>
+				<processAction id="delete" actionType="deleteCustomString" className="br.com.essia.website.service.locale.LocaleProcessActionHandler" >
+					<response type="doui_standardEmbedded"/>
+				</processAction>
+				<processAction id="clearCache" actionType="clearCache" className="br.com.essia.website.service.locale.LocaleProcessActionHandler" />
+			</processActions>
+		</interface>
+		
+		<interface id="addStrings">
+			<sources>
+				<source id="customString"/>
+			</sources>
+			<controls>
+				<control:lum_form>
+					<control:lum_propertyPage>
+						<control:lum_controlGroup title="STR_BASIC_INFORMATION" visualAid="true">
+							<control:lum_inputHidden id="localeCode" defaultValue="pt_BR"  />
+							<control:lum_inputHidden id="status"  defaultValue="1"  />
+							<control:lum_autoLayoutFields>
+								<field id="stringId" />
+								<field id="string" />
+								<field id="resourcePath">
+									<value>
+										<control:lum_selectPage id="resourcePath"/>
+									</value>
+								</field>
+							</control:lum_autoLayoutFields>
+						</control:lum_controlGroup>
+					</control:lum_propertyPage>
+				</control:lum_form>
+			</controls>
+			<processActions>
+				<processAction id="commit" actionType="addOrUpdateCustomString" className="br.com.essia.website.service.locale.LocaleProcessActionHandler" >
+					<response type="doui_standardCommit"/>
+				</processAction>
+			</processActions>
+		</interface>
+			
+		<interface id="editStrings">
+			<sources>
+				<source id="customString"/>
+			</sources>
+			<controls>
+				<control:lum_form>
+					<control:lum_filters id="filters"/>
+					<control:lum_propertyPage>
+						<control:lum_controlGroup title="STR_BASIC_INFORMATION" visualAid="true">
+							<control:lum_inputHidden id="localeCode" defaultValue="pt_BR"  />
+							<control:lum_inputHidden id="status"  defaultValue="1"  />
+							<control:lum_autoLayoutFields>
+								<field id="stringId" />
+								<field id="string" />
+								<field id="resourcePath">
+									<value>
+										<control:lum_selectPage id="resourcePath"/>
+									</value>
+								</field>
+							</control:lum_autoLayoutFields>
+						</control:lum_controlGroup>
+					</control:lum_propertyPage>
+				</control:lum_form>
+			</controls>
+			<processActions>
+				<processAction id="commit" actionType="addOrUpdateCustomString" className="br.com.essia.website.service.locale.LocaleProcessActionHandler">
+					<response type="doui_standardCommit"/>
+				</processAction>
+			</processActions>
+		</interface>
+	</interfaces>
+</doui:douiDefinition>

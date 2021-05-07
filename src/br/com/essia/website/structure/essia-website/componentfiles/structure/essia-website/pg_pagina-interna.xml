@@ -5,7 +5,7 @@
   <template>true</template>
   <layout-type>LAYOUT_FILE</layout-type>
   <layout-file>template.html</layout-file>
-  <layout><![CDATA[<layout><holder id="header"><interface id="2C93808A78D9F96F01790403129B4F53"/></holder><holder id="content"><interface id="2C93808A78D9F96F017903E316292A33"/></holder><holder id="footermenu"><interface id="4028817279147A00017919E4821F05E5"/></holder></layout>]]></layout>
+  <layout><![CDATA[<layout><holder id="header"><interface id="2C93808A78D9F96F01790403129B4F53"/></holder><holder id="content"><interface id="2C93808A78D9F96F017903E316292A33"/></holder><holder id="footermedia"><interface id="4028817279470E870179488D6079336D"/></holder><holder id="footermenu"><interface id="4028817279147A00017919E4821F05E5"/></holder><holder id="footerapps"><interface id="4028817279470E870179489160363845"/></holder></layout>]]></layout>
   <interface-instances>
     <interface-instance>
       <id>2C93808A78D9F96F017903E316292A33</id>
@@ -17,12 +17,25 @@
       <service-instance-id>2C93808A78D9F96F01790402F05D4F3F</service-instance-id>
       <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
       <applied-interface-style-id>2C93808A78D9F96F0179040689B24FE3</applied-interface-style-id>
+      <custom-properties>
+        <custom-property name="default.doui_filters">&lt;filters/&gt;</custom-property>
+      </custom-properties>
     </interface-instance>
     <interface-instance>
       <id>4028817279147A00017919E4821F05E5</id>
       <service-instance-id>2C93808A78D9F96F01790402F05D4F3F</service-instance-id>
       <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
       <applied-interface-style-id>4028817279147A00017919E3A1E7003D</applied-interface-style-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279470E870179488D6079336D</id>
+      <service-instance-id>4028817279470E870179488D1BCA3358</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279470E870179489160363845</id>
+      <service-instance-id>4028817279470E87017948913F84382B</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
     </interface-instance>
   </interface-instances>
 </page>

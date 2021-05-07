@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>4028817279470E87017948913F84382B</id>
+  <name>Footer Apps</name>
+  <description>Permite publicar conteúdos Html.</description>
+  <service-id>lumis.service.htmlcontent</service-id>
+  <workflow>lumis.standardworkflow</workflow>
+  <workflow-permissions>
+    <workflow-permission principal-id="00000000C00000000000000000000003">
+      <role type="allow">author</role>
+      <role type="allow">chiefEditor</role>
+      <role type="allow">editor</role>
+    </workflow-permission>
+  </workflow-permissions>
+  <dependencies>
+    <dependency type="document_repository">
+      <service-instance-id>2C93808A78D9F96F017903E30F4B25C7</service-instance-id>
+    </dependency>
+    <dependency type="media_repository">
+      <service-instance-id>2C93808A78D9F96F017903E3135425CD</service-instance-id>
+    </dependency>
+    <dependency type="widget_repository">
+      <service-instance-id>2C93808A78D9F96F01790448EF80679B</service-instance-id>
+    </dependency>
+  </dependencies>
+  <property-bag>
+    <property name="lumis.doui.control.htmleditor.htmlsnippet#templates">
+      <private>true</private>
+      <default-values>
+        <value>{&quot;id&quot;:&quot;4028817279470E8701794891DB7338F1&quot;,&quot;sourceId&quot;:&quot;htmlContent&quot;,&quot;fieldId&quot;:&quot;content&quot;,&quot;title&quot;:&quot;Footer Apps&quot;,&quot;image&quot;:null,&quot;htmlContent&quot;:&quot;&lt;div class=\&quot;footer-right\&quot;&gt; \n        &lt;p&gt;Baixe o App da Essia.&lt;/p&gt; \n        &lt;a href=\&quot;#\&quot;&gt;&lt;img src=\&quot;assets/img/app-store-download.png\&quot; alt=\&quot;\&quot; /&gt;&lt;/a&gt; \n        &lt;a href=\&quot;#\&quot;&gt;&lt;img src=\&quot;assets/img/google-play-download.png\&quot; alt=\&quot;\&quot; /&gt;&lt;/a&gt; \n       &lt;/div&gt;&quot;}</value>
+      </default-values>
+    </property>
+  </property-bag>
+</service-instance>

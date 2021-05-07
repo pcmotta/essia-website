@@ -13,8 +13,14 @@
         <interface id="2C93808A78D9F96F017903F726BA45AE"></interface>
         <interface id="2C93808A78D9F96F017903F1F8864295"></interface>
     </holder>
+    <holder id="footermedia">
+        <interface id="4028817279470E870179488F6CEA3472"></interface>
+    </holder>
     <holder id="footermenu">
         <interface id="4028817279147A00017919EB87BC0D2B"></interface>
+    </holder>
+    <holder id="footerapps">
+        <interface id="4028817279470E8701794891877B3897"></interface>
     </holder>
 </layout>]]></layout>
   <interface-instances>
@@ -36,7 +42,7 @@
       <parent-interface-instance-id>2C93808A78D9F96F01790403129B4F53</parent-interface-instance-id>
       <applied-interface-style-id>2C93808A78D9F96F0179040689B24FE3</applied-interface-style-id>
       <custom-properties>
-        <custom-property name="default.doui_filters">&lt;filters&gt;&lt;filter filterType=&quot;basic&quot; id=&quot;position_filter&quot; fieldId=&quot;position&quot; operator=&quot;greaterThan&quot; defaultValue=&quot;0&quot;/&gt;&lt;/filters&gt;</custom-property>
+        <custom-property name="default.doui_filters">&lt;filters/&gt;</custom-property>
       </custom-properties>
     </interface-instance>
     <interface-instance>
@@ -45,6 +51,18 @@
       <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
       <parent-interface-instance-id>4028817279147A00017919E4821F05E5</parent-interface-instance-id>
       <applied-interface-style-id>4028817279147A00017919E3A1E7003D</applied-interface-style-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279470E870179488F6CEA3472</id>
+      <service-instance-id>4028817279470E870179488D1BCA3358</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
+      <parent-interface-instance-id>4028817279470E870179488D6079336D</parent-interface-instance-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279470E8701794891877B3897</id>
+      <service-instance-id>4028817279470E87017948913F84382B</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
+      <parent-interface-instance-id>4028817279470E870179489160363845</parent-interface-instance-id>
     </interface-instance>
   </interface-instances>
 </page>

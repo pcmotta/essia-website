@@ -2,20 +2,22 @@
 <doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
 	<service>
 		<sources>
-			<source id="escolas" type="contentTable">
+			<source id="escolas" type="table">
 				<table>ew_escolas</table>
 				<fields>
-					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
-					<field id="nome" name="nome" dataType="string" required="true" />
-					<field id="logo" name="logo" dataType="media" required="true" />
-					<field id="cidade" name="cidade" dataType="string" required="true" />
-					<field id="estado" name="estado" dataType="string" required="true" />
-					<field id="posicao" name="posicao" dataType="integer" required="true" defaultValue="1" />
+					<field id="id" name="Id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
+					<field id="nome" name="Nome" dataType="string" required="true" />
+					<field id="logo" name="Logo" dataType="media" required="true" />
+					<field id="cidade" name="Cidade" dataType="string" required="true" />
+					<field id="estado" name="Estado" dataType="string" required="true" />
+					<field id="posicao" name="Posição" dataType="integer" required="true" defaultValue="1" />
+					<field id="destaque" name="Destaque" dataType="boolean" required="true" defaultValue="false">
+						<options>
+							<option value="false">Não</option>
+							<option value="true">Sim</option>
+						</options>
+					</field>
 				</fields>
-				<metaData>
-					<workflow/>
-					<highlight/>
-				</metaData>
 			</source>
 		</sources>
 	</service>
@@ -26,7 +28,7 @@
 				<source id="escolas">
 					<fields inherit="all" />
 					<orderBy>
-						<field direction="descending" id="highlight" />
+						<field direction="descending" id="destaque" />
 						<field direction="ascending" id="posicao" />
 					</orderBy>
 					<maxRows>-1</maxRows>
@@ -39,7 +41,7 @@
 				<source id="escolas">
 					<fields inherit="all" />
 					<filters>
-						<filter id="highlight" value="true" />
+						<filter id="destaque" value="true" />
 					</filters>
 					<orderBy>
 						<field direction="ascending" id="posicao" />
@@ -57,22 +59,16 @@
 						<field id="cidade" name="Cidade" />
 						<field id="estado" name="Estado" />
 						<field id="posicao" name="Posição" />
-						<field id="highlight" name="Destaque" doOptionLookup="true">
-							<options>
-								<option value="true">Sim</option>
-								<option value="false">Não</option>
-							</options>
-						</field>
-						<field id="lastModifiedDate" display="true" />
+						<field id="destaque" name="Destaque" doOptionLookup="true" />
 					</fields>
 					<filters>
 						<filter id="nome" operator="like" />
 						<filter id="cidade" operator="like" />
 						<filter id="estado" showItems="all" />
-						<filter id="highlight" showItems="all" />
+						<filter id="destaque" showItems="all" />
 					</filters>
 					<orderBy>
-						<field direction="descending" id="highlight" />
+						<field direction="descending" id="destaque" />
 						<field direction="ascending" id="posicao" />
 					</orderBy>
 				</source>

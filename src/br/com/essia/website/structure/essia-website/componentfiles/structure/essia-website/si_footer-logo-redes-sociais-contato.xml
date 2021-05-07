@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>4028817279470E870179488D1BCA3358</id>
+  <name>Footer (Logo, Redes Sociais, Contato)</name>
+  <description>Permite publicar conteúdos Html.</description>
+  <service-id>lumis.service.htmlcontent</service-id>
+  <workflow>lumis.standardworkflow</workflow>
+  <workflow-permissions>
+    <workflow-permission principal-id="00000000C00000000000000000000003">
+      <role type="allow">author</role>
+      <role type="allow">chiefEditor</role>
+      <role type="allow">editor</role>
+    </workflow-permission>
+  </workflow-permissions>
+  <dependencies>
+    <dependency type="document_repository">
+      <service-instance-id>2C93808A78D9F96F017903E30F4B25C7</service-instance-id>
+    </dependency>
+    <dependency type="media_repository">
+      <service-instance-id>2C93808A78D9F96F017903E3135425CD</service-instance-id>
+    </dependency>
+    <dependency type="widget_repository">
+      <service-instance-id>2C93808A78D9F96F01790448EF80679B</service-instance-id>
+    </dependency>
+  </dependencies>
+  <property-bag>
+    <property name="lumis.doui.control.htmleditor.htmlsnippet#templates">
+      <private>true</private>
+      <default-values>
+        <value>{&quot;id&quot;:&quot;4028817279470E870179488E4C4F33A5&quot;,&quot;sourceId&quot;:&quot;htmlContent&quot;,&quot;fieldId&quot;:&quot;content&quot;,&quot;title&quot;:&quot;Footer (Logo, Redes Sociais, Contato)&quot;,&quot;image&quot;:null,&quot;htmlContent&quot;:&quot;&lt;!-- Footer Logo Start --&gt; \n       &lt;div class=\&quot;footer-logo\&quot;&gt; \n        &lt;img src=\&quot;assets/img/footer-logo.png\&quot; alt=\&quot;footer logo\&quot; /&gt; \n       &lt;/div&gt; \n       &lt;!-- /Footer Logo  end--&gt; \n       &lt;!-- Footer social links Start --&gt; \n       &lt;div class=\&quot;social-links\&quot;&gt; \n        &lt;ul&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-facebook\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-linkedin\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-instagram\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-twitter\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n        &lt;/ul&gt; \n       &lt;/div&gt; \n       &lt;!-- /Footer social links Start --&gt; \n       &lt;div class=\&quot;footer-cont-btn\&quot;&gt; \n        &lt;a href=\&quot;#\&quot;&gt;Entre em contato&lt;/a&gt; \n       &lt;/div&gt;&quot;}</value>
+      </default-values>
+    </property>
+  </property-bag>
+</service-instance>

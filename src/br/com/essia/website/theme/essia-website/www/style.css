@@ -1043,13 +1043,14 @@ Single blog item Style Start
     line-height: 20px;
 }
 .blog-content h4{
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 17px;
     font-weight: 600;
     color: #272e32;
     line-height:10px;
 }
 .blog-content h5{
+	margin-top: 20px;
     font-size: 13px;
     font-weight: 800;
     color: #272e32;
@@ -1675,4 +1676,15 @@ Footer Style End
 }
 #LumisAdminWorkPaneHeader ul li a {
 	display: inherit;
+}
+
+
+
+/*
+==============================
+Form Error 
+==============================
+*/
+form .error {
+	color: red;
 }

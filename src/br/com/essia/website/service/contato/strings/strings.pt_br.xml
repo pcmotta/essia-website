@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<strings>
+	<string id="STR_SERVICE_NAME"><![CDATA[Contato]]></string>
+	<string id="STR_SERVICE_DESCRIPTION"><![CDATA[Permite o envio de contato]]></string>
+	
+	<string id="STR_FORM"><![CDATA[Formulário de Contato]]></string>
+</strings>

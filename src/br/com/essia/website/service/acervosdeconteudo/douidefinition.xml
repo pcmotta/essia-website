@@ -2,8 +2,8 @@
 <doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
 	<service>
 		<sources>
-			<source id="editoras" type="table">
-				<table>ew_editoras</table>
+			<source id="acervos" type="table">
+				<table>ew_acervos_de_conteudo</table>
 				<fields>
 					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
 					<field id="nome" name="Nome" dataType="string" required="true" isPrimaryName="true" />
@@ -15,6 +15,10 @@
 					<field id="textoDetalhe" name="Texto Detalhe" dataType="text" required="true" />
 					<field id="cor" name="Cor" dataType="string" required="true" />
 					<field id="corTexto" name="Cor do Texto" dataType="string" defaultValue="#FFF" />
+					<field id="exibeNaLista" name="Exibe na Lista" dataType="boolean" defaultValue="true" />
+					<field id="exibeFiltroDisciplina" name="Exibe Filtro de Disciplina" dataType="boolean" defaultValue="true" />
+					<field id="exibeFiltroSegmento" name="Exibe Filtro de Segmento" dataType="boolean" defaultValue="true" />
+					<field id="exibeFiltroSerie" name="Exibe Filtro de Série" dataType="boolean" defaultValue="true" />
 					<field id="posicao" name="Posição" dataType="integer" required="true" defaultValue="1" />
 				</fields>
 			</source>
@@ -28,25 +32,26 @@
 					<field id="colecao" name="Coleção" dataType="string" isSearchable="true" />
 					<field id="disciplina" name="Disciplina" dataType="string" isSearchable="true" >
 						<options>
-							<option value="Geografia">Geografia</option>
-							<option value="História">História</option>
+							<option value="GEOGRAFIA">Geografia</option>
+							<option value="HISTORIA">História</option>
 						</options>
 					</field>
 					<field id="segmento" name="Segmento" dataType="string" isSearchable="true" >
 						<options>
-							<option value="Ensino Fundamental 1">Ensino Fundamental 1</option>
-							<option value="Ensino Fundamental 2">Ensino Fundamental 2</option>
-							<option value="Ensino Médio">Ensino Médio</option>
+							<option value="FUNDAMENTAL1">Ensino Fundamental 1</option>
+							<option value="FUNDAMENTAL2">Ensino Fundamental 2</option>
+							<option value="MEDIO">Ensino Médio</option>
 						</options>
 					</field>
 					<field id="serie" name="Série" dataType="string" isSearchable="true" >
 						<options>
-							<option value="1 Ano">1 Ano</option>
-							<option value="2 Ano">2 Ano</option>
+							<option value="ANO1">1 Ano</option>
+							<option value="ANO2">2 Ano</option>
 						</options>
 					</field>
 					<field id="link" name="Link" dataType="string" required="true" />
-					<field id="editoraId" name="Editora" dataType="guid" required="true" lookupRelationId="editora" lookupFieldId="nome" />
+					<field id="acervoId" name="Acervo de Conteúdo" dataType="guid" required="true" lookupRelationId="acervo" lookupFieldId="nome" />
+					<field id="editora" name="Editora" dataType="string" />
 				</fields>
 				<metaData>
 					<multiLanguage/>
@@ -54,18 +59,49 @@
 					<seo/>
 				</metaData>
 				<relations>
-					<relation id="editora" foreignSourceId="editoras">
-						<relationField fieldId="editoraId" foreignFieldId="id" />
+					<relation id="acervo" foreignSourceId="acervos">
+						<relationField fieldId="acervoId" foreignFieldId="id" />
 					</relation>
 				</relations>
 			</source>
 		</sources> 
 	</service>
 	
+	<restInterfaces>
+		<restInterface id="getLivros">
+			<sources>
+				<source id="livros" readData="always">
+					<fields>
+						<field id="titulo" />
+						<field id="autor" />
+						<field id="capa" />
+						<field id="colecao" />
+						<field id="segmento" doOptionLookup="true" />
+						<field id="disciplina" doOptionLookup="true" />
+						<field id="serie" doOptionLookup="true" />
+						<field id="editora" />
+					</fields>
+					<filters>
+						<filter id="titulo" operator="like" requestParameterName="titulo" required="false" />
+						<filter id="autor" operator="like" requestParameterName="autor" required="false" />
+						<filter id="segmento" operator="equal" requestParameterName="segmento" />
+						<filter id="disciplina" operator="equal" requestParameterName="disciplina" />
+						<filter id="serie" operator="equal" requestParameterName="serie" />
+						<filter id="acervoId" operator="equal" requestParameterName="itemId" required="false" />
+					</filters>
+					<maxRows>-1</maxRows>
+					<postLoadProcessors>
+						<postLoadProcessor className="br.com.essia.website.service.acervosdeconteudo.postload.GetLivrosPostLoadProcessor" />
+					</postLoadProcessors>
+				</source>
+			</sources>
+		</restInterface>
+	</restInterfaces>
+	
 	<interfaces>
 		<interface id="list">
 			<sources>
-				<source id="editoras">
+				<source id="acervos">
 					<fields>
 						<field id="nome" />
 						<field id="logo" />
@@ -74,6 +110,9 @@
 						<field id="cor" />
 						<field id="corTexto" />
 					</fields>
+					<filters>
+						<filter id="exibeNaLista" operator="equal" value="true" />
+					</filters>
 					<orderBy>
 						<field direction="ascending" id="posicao" />
 					</orderBy>
@@ -84,32 +123,36 @@
 		
 		<interface id="detalhe">
 			<sources>
-				<source id="editoras">
+				<source id="acervos">
 					<fields>
 						<field id="logoDetalhe" />
 						<field id="bannerDetalhe" />
 						<field id="textoDetalhe" />
+						<field id="exibeFiltroDisciplina" />
+						<field id="exibeFiltroSegmento" />
+						<field id="exibeFiltroSerie" />
 					</fields>
 					<filters>
 						<filter id="id" requestParameterName="itemId" operator="equal" />
 					</filters>
 				</source>
 				<source id="livros" readData="always">
-					<fields inherit="all" />
+					<!-- #include(xpath: "/doui:douiDefinition/restInterfaces/restInterface[@id='getLivros']/sources/source[@id='livros']/fields") -->
 					<filters>
-						<filter id="editoraId" requestParameterName="itemId" />
+						<filter id="acervoId" requestParameterName="itemId" />
 					</filters>
+					<maxRows>-1</maxRows>
 				</source>
 			</sources>
 			<controls>
-				<control:lum_autoLayoutDetails sourceId="editoras" />
+				<control:lum_autoLayoutDetails sourceId="acervos" />
 				<control:lum_list sourceId="livros" />
 			</controls>
 		</interface>
 		
 		<interface id="administration">
 			<sources>
-				<source id="editoras">
+				<source id="acervos">
 					<fields>
 						<field id="nome" />
 						<field id="posicao" />
@@ -123,7 +166,7 @@
 		
 		<interface id="add">
 			<sources>
-				<source id="editoras" />
+				<source id="acervos" />
 			</sources>
 			<controls>
 				<control:lum_form>
@@ -209,6 +252,38 @@
 							</control:lum_div>
 							<control:lum_div class="lum-form-field">
 								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeNaLista" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeNaLista" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeFiltroDisciplina" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeFiltroDisciplina" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeFiltroSegmento" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeFiltroSegmento" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeFiltroSerie" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeFiltroSerie" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
 									<control:lum_label dataId="posicao" />
 								</control:lum_div>
 								<control:lum_div class="lum-form-field-value">
@@ -227,7 +302,7 @@
 		
 		<interface id="edit">
 			<sources>
-				<source id="editoras" />
+				<source id="acervos" />
 			</sources>
 			<controls>
 				<control:lum_form>
@@ -315,6 +390,38 @@
 							</control:lum_div>
 							<control:lum_div class="lum-form-field">
 								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeNaLista" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeNaLista" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeFiltroDisciplina" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeFiltroDisciplina" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeFiltroSegmento" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeFiltroSegmento" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
+									<control:lum_label dataId="exibeFiltroSerie" />
+								</control:lum_div>
+								<control:lum_div class="lum-form-field-value">
+							 		<control:lum_checkBox id="exibeFiltroSerie" />
+								</control:lum_div>
+							</control:lum_div>
+							<control:lum_div class="lum-form-field">
+								<control:lum_div class="lum-form-field-label">
 									<control:lum_label dataId="posicao" />
 								</control:lum_div>
 								<control:lum_div class="lum-form-field-value">
@@ -351,12 +458,8 @@
 
 		<interface id="addLivros">
 			<sources>
-				<source id="livros">
-					<fields inherit="all">
-						<field id="editoraId" doOptionLookup="true" />
-					</fields>
-				</source>
-				<source id="editoras" />
+				<source id="livros" />
+				<source id="acervos" />
 			</sources>
 		</interface>
 		

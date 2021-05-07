@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <service-instance version="7.0">
-  <id>40288172791ECE8F01791ED9436C0705</id>
-  <name>Editoras</name>
-  <description>Permite cadastrar Editoras</description>
-  <service-id>br.com.essia.website.service.editoras</service-id>
+  <id>4028817279337EE00179339093663AC0</id>
+  <name>Acervos de Conteúdo</name>
+  <description>Permite cadastrar Acervos de Conteúdo</description>
+  <service-id>br.com.essia.website.service.acervosdeconteudo</service-id>
+  <rest-short-name>acervos</rest-short-name>
+  <rest-enabled>true</rest-enabled>
   <workflow>lumis.standardworkflow</workflow>
   <workflow-permissions>
     <workflow-permission principal-id="00000000C00000000000000000000003">

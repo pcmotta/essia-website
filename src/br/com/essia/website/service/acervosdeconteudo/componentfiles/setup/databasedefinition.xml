@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <databaseDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/databasedefinition.xsd">
 
-	<table name="ew_editoras">
+	<table name="ew_acervos_de_conteudo">
 		<fields>
 			<field name="id" type="guid" isNotNull="true" />
 			<field name="nome" type="string" isNotNull="true" />
@@ -13,10 +13,14 @@
 			<field name="textoDetalhe" type="text" isNotNull="true" />
 			<field name="cor" type="string" isNotNull="true" />
 			<field name="corTexto" type="string" />
+			<field name="exibeNaLista" type="boolean" isNotNull="true" />
+			<field name="exibeFiltroDisciplina" type="boolean" />
+			<field name="exibeFiltroSegmento" type="boolean" />
+			<field name="exibeFiltroSerie" type="boolean" />
 			<field name="posicao" type="integer" isNotNull="true" />
 		</fields>
 		<constraints>
-			<constraint name="ew_editoras_PK" type="primaryKey">
+			<constraint name="ew_acervos_de_conteudo_PK" type="primaryKey">
 				<fields>
 					<field name="id" />
 				</fields>
@@ -35,7 +39,8 @@
 			<field name="segmento" type="string" />
 			<field name="serie" type="string" />
 			<field name="link" type="string" isNotNull="true" />
-			<field name="editoraId" type="guid" isNotNull="true" />
+			<field name="acervoId" type="guid" isNotNull="true" />
+			<field name="editora" type="string" />
 		</fields>
 		<constraints>
 			<constraint name="ew_livros_PK" type="primaryKey">
@@ -43,11 +48,11 @@
 					<field name="id"/>
 				</fields>
 			</constraint>
-			<constraint name="ew_livros_editora_FK" type="foreignKey">
+			<constraint name="ew_livros_acervo_FK" type="foreignKey">
 				<fields>
-					<field name="editoraId" />
+					<field name="acervoId" />
 				</fields>
-				<references table="ew_editoras">
+				<references table="ew_acervos_de_conteudo">
 					<fields>
 						<field name="id" />
 					</fields>

@@ -10,4 +10,7 @@
 	<run-sql step="3">
 		<sql>ALTER TABLE ew_escolas CHANGE ordem posicao INT</sql>
 	</run-sql>
+	<run-sql step="4">
+		<sql>ALTER TABLE ew_escolas ADD destaque TINYINT(4)</sql>
+	</run-sql>
 </component-upgrade>

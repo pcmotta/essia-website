@@ -3,9 +3,11 @@ var rows = lum_xpath.getMaps("//data/row");
 for(var i in rows)
 {
 	var row = rows[i];
+	if (row.hidden == 'false') {
 %>
 	<li><a href="<%=row.$href%>"><%=row.title%></a></li>
 <%
+	}
 }
 %> 
 <li class="test-btn"><a href="#">Quero testar</a></li> 

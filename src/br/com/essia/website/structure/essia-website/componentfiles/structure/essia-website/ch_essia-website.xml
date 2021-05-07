@@ -10,6 +10,9 @@
   <cache-pages>ENABLED</cache-pages>
   <access-control-list>
     <entries>
+      <entry principal-id="00000000D00000000000000000000002">
+        <allow-permissions>65792</allow-permissions>
+      </entry>
       <entry principal-id="2C93808A78D9F96F017903E316652A38">
         <allow-permissions>622848</allow-permissions>
       </entry>
@@ -31,6 +34,7 @@
     <theme>br.com.essia.website.theme.essia-website</theme>
   </themes>
   <locale>
+    <detect-locale-from-user-browser>false</detect-locale-from-user-browser>
     <supported-locales>
       <locale>pt_BR</locale>
     </supported-locales>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/servicedefinition.xsd">
+	<service name="STR_SERVICE_NAME" type="lum_service">
+		<description>STR_SERVICE_DESCRIPTION</description>			
+	</service>
+  
+  <interfaces>
+  	<interface name="STR_FORM" id="form" type="lum_styled"> 
+		<styles>
+			<style name="STR_FOR" path="styles/form.js" id="form" />
+		</styles>  	
+  	</interface>
+  </interfaces>
+</serviceDefinition>

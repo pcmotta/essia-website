@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component-uninstall xmlns="http://www.lumis.com.br/lumisportal/xsd/component-uninstall-script" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<run-sql>
-		<sql>drop table ew_editoras</sql>
+		<sql>drop table ew_acervos_de_conteudo</sql>
 	</run-sql>
 </component-uninstall>
