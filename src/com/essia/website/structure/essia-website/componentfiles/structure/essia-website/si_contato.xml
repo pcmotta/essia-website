@@ -3,5 +3,5 @@
   <id>4028817279470E87017947F8D4EA3422</id>
   <name>Contato</name>
   <description>Permite o envio de contato</description>
-  <service-id>br.com.essia.website.service.contato</service-id>
+  <service-id>com.essia.website.service.contato</service-id>
 </service-instance>

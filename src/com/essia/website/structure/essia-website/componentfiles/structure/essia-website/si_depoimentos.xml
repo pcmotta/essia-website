@@ -3,7 +3,7 @@
   <id>4028817279147A00017919C63CE36E76</id>
   <name>Depoimentos</name>
   <description>Permite cadastrar depoimentos de usuários</description>
-  <service-id>br.com.essia.website.service.depoimentos</service-id>
+  <service-id>com.essia.website.service.depoimentos</service-id>
   <workflow>lumis.standardworkflow</workflow>
   <workflow-permissions>
     <workflow-permission principal-id="00000000C00000000000000000000003">

@@ -53,7 +53,7 @@
     <interface-instance>
       <id>4028817279337EE0017933CFE126458B</id>
       <service-instance-id>4028817279337EE00179339093663AC0</service-instance-id>
-      <interface-id>br.com.essia.website.service.acervosdeconteudo.detalhe</interface-id>
+      <interface-id>com.essia.website.service.acervosdeconteudo.detalhe</interface-id>
     </interface-instance>
     <interface-instance>
       <id>4028817279470E870179488F6BE3343D</id>
