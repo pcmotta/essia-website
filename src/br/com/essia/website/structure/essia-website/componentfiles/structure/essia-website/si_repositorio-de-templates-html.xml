@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>402881727966A0A1017966A1F3290024</id>
+  <name>Repositório de Templates HTML</name>
+  <description>Permite gerenciar templates HTML para serem utilizados nos campos HTML de outros serviços.</description>
+  <service-id>lumis.service.htmltemplate</service-id>
+</service-instance>

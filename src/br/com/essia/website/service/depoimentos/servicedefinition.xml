@@ -2,12 +2,13 @@
 <serviceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:noNamespaceSchemaLocation="http://www.lumis.com.br/lumisportal/xsd/servicedefinition.xsd">
 	
-	<service name="STR_SERVICE_NAME" type="lum_doui">
+	<service name="STR_SERVICE_NAME" type="lum_content">
 	  	<description>STR_SERVICE_DESCRIPTION</description>
+	  	<workflow enabled="true"/>
 	</service>
 	
 	<interfaces>
-	  	<interface name="STR_LISTA" id="list" type="lum_douiList">
+	  	<interface name="STR_LISTA" id="list" type="lum_contentList">
 	  		<styles>
 	  			<style name="STR_LISTA" path="styles/list.js" id="list" />
 	  		</styles>
@@ -15,9 +16,9 @@
 	  	
 	  	<!-- administration interfaces -->
 	
-		<interface id="administration" name="STR_ADMINISTRATION" type="lum_douiAdministrationList" />
-		<interface id="add" name="STR_ADD" type="lum_douiAdministrationAddPropertyPage" />
-		<interface id="edit" name="STR_EDIT" type="lum_douiAdministrationEditPropertyPage" />
+		<interface id="administration" name="STR_ADMINISTRATION" type="lum_contentAdministrationList" />
+		<interface id="add" name="STR_ADD" type="lum_contentAdministrationAddPropertyPage" />
+		<interface id="edit" name="STR_EDIT" type="lum_contentAdministrationEditPropertyPage" />
 		
 	</interfaces>	
 </serviceDefinition>

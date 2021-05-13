@@ -5,24 +5,7 @@
   <parent-template-id>2C93808A78D9F96F017903E316192A29</parent-template-id>
   <layout-type>LAYOUT_FILE</layout-type>
   <layout-file>template.html</layout-file>
-  <layout><![CDATA[<layout>
-    <holder id="header">
-        <interface id="2C93808A78D9F96F0179040CA6E85778"></interface>
-    </holder>
-    <holder id="content">
-        <interface id="2C93808A78D9F96F017903F726BA45AE"></interface>
-        <interface id="2C93808A78D9F96F017903F1F8864295"></interface>
-    </holder>
-    <holder id="footermedia">
-        <interface id="4028817279470E870179488F6CEA3472"></interface>
-    </holder>
-    <holder id="footermenu">
-        <interface id="4028817279147A00017919EB87BC0D2B"></interface>
-    </holder>
-    <holder id="footerapps">
-        <interface id="4028817279470E8701794891877B3897"></interface>
-    </holder>
-</layout>]]></layout>
+  <layout><![CDATA[<layout><holder id="header"><interface id="2C93808A78D9F96F0179040CA6E85778"/></holder><holder id="content"><interface id="2C93808A78D9F96F017903F726BA45AE"/><interface id="2C93808A78D9F96F017903F1F8864295"/></holder><holder id="footermedia"><interface id="4028817279470E870179488F6CEA3472"/></holder><holder id="footermenu"><interface id="4028817279147A00017919EB87BC0D2B"/></holder><holder id="footerapps"><interface id="4028817279470E8701794891877B3897"/></holder></layout>]]></layout>
   <interface-instances>
     <interface-instance>
       <id>2C93808A78D9F96F017903F1F8864295</id>

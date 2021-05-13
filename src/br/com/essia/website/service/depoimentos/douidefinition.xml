@@ -3,7 +3,7 @@
 	
 	<service>
 		<sources>
-			<source id="depoimentos" type="table">
+			<source id="depoimentos" type="contentTable">
 				<table>ew_depoimentos</table>
 				<fields>
 					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" />
@@ -13,6 +13,9 @@
 					<field id="funcao" name="Função" dataType="string" />
 					<field id="posicao" name="Posição" dataType="integer" defaultValue="1" required="true" />
 				</fields>
+				<metaData>
+					<workflow/>
+				</metaData>
 			</source>
 		</sources>
 	</service>
@@ -37,10 +40,12 @@
 						<field id="nome" name="Nome" />
 						<field id="funcao" name="Função" />
 						<field id="posicao" name="Posição" />
+						<field id="workflowState" />
 					</fields>
 					<filters>
 						<filter id="nome" operator="like" />
 						<filter id="funcao" operator="like" />
+						<filter id="workflowState" showAll="true" />
 					</filters>
 					<orderBy>
 						<field direction="ascending" id="posicao" />

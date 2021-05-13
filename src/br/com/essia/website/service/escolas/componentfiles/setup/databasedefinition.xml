@@ -9,7 +9,6 @@
 			<field name="cidade" type="string" isNotNull="true" />
 			<field name="estado" type="string" isNotNull="true" />
 			<field name="posicao" type="integer" isNotNull="true" />
-			<field name="destaque" type="boolean" />
 		</fields>
 		<constraints>
 			<constraint name="ew_escolas_PK" type="primaryKey">

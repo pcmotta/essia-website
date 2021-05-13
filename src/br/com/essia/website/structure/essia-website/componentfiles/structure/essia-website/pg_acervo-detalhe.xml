@@ -25,6 +25,7 @@
         <interface id="4028817279470E870179489186533860"></interface>
     </holder>
 </layout>]]></layout>
+  <friendly-url-pattern>${ancestralPath}${paramsPath}</friendly-url-pattern>
   <interface-instances>
     <interface-instance>
       <id>4028817279337EE0017933CFC270454B</id>

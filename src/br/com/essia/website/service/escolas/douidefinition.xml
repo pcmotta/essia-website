@@ -2,7 +2,7 @@
 <doui:douiDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doui="http://www.lumis.com.br/lumisportal/xsd/doui"  xmlns:control="http://www.lumis.com.br/douicontrols">
 	<service>
 		<sources>
-			<source id="escolas" type="table">
+			<source id="escolas" type="contentTable">
 				<table>ew_escolas</table>
 				<fields>
 					<field id="id" name="Id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
@@ -11,13 +11,11 @@
 					<field id="cidade" name="Cidade" dataType="string" required="true" />
 					<field id="estado" name="Estado" dataType="string" required="true" />
 					<field id="posicao" name="Posição" dataType="integer" required="true" defaultValue="1" />
-					<field id="destaque" name="Destaque" dataType="boolean" required="true" defaultValue="false">
-						<options>
-							<option value="false">Não</option>
-							<option value="true">Sim</option>
-						</options>
-					</field>
 				</fields>
+				<metaData>
+					<workflow/>
+					<highlight/>
+				</metaData>
 			</source>
 		</sources>
 	</service>
@@ -28,7 +26,7 @@
 				<source id="escolas">
 					<fields inherit="all" />
 					<orderBy>
-						<field direction="descending" id="destaque" />
+						<field direction="descending" id="highlight" />
 						<field direction="ascending" id="posicao" />
 					</orderBy>
 					<maxRows>-1</maxRows>
@@ -41,7 +39,7 @@
 				<source id="escolas">
 					<fields inherit="all" />
 					<filters>
-						<filter id="destaque" value="true" />
+						<filter id="highlight" value="true" />
 					</filters>
 					<orderBy>
 						<field direction="ascending" id="posicao" />
@@ -59,16 +57,23 @@
 						<field id="cidade" name="Cidade" />
 						<field id="estado" name="Estado" />
 						<field id="posicao" name="Posição" />
-						<field id="destaque" name="Destaque" doOptionLookup="true" />
+						<field id="highlight" name="Destaque" doOptionLookup="true">
+							<options>
+								<option value="false">Não</option>
+								<option value="true">Sim</option>
+							</options>
+						</field>
+						<field id="workflowState" />
 					</fields>
 					<filters>
 						<filter id="nome" operator="like" />
 						<filter id="cidade" operator="like" />
 						<filter id="estado" showItems="all" />
-						<filter id="destaque" showItems="all" />
+						<filter id="highlight" showItems="all" />
+						<filter id="workflowState" showItems="all" />
 					</filters>
 					<orderBy>
-						<field direction="descending" id="destaque" />
+						<field direction="descending" id="highlight" />
 						<field direction="ascending" id="posicao" />
 					</orderBy>
 				</source>
