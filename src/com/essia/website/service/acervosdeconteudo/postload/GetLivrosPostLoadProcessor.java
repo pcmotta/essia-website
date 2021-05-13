@@ -1,10 +1,10 @@
-package br.com.essia.website.service.acervosdeconteudo.postload;
+package com.essia.website.service.acervosdeconteudo.postload;
 
 import org.w3c.dom.Node;
 
-import br.com.essia.website.service.acervosdeconteudo.models.Disciplina;
-import br.com.essia.website.service.acervosdeconteudo.models.Segmento;
-import br.com.essia.website.service.acervosdeconteudo.models.Serie;
+import com.essia.website.service.acervosdeconteudo.models.Disciplina;
+import com.essia.website.service.acervosdeconteudo.models.Segmento;
+import com.essia.website.service.acervosdeconteudo.models.Serie;
 import lumis.doui.source.ISourceData;
 import lumis.doui.source.Source;
 import lumis.doui.source.TabularData;
