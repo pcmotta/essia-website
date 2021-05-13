@@ -6,7 +6,7 @@
 				<table>ew_acervos_de_conteudo</table>
 				<fields>
 					<field id="id" name="id" dataType="guid" required="true" isPrimaryKey="true" display="false" />
-					<field id="nome" name="Nome" dataType="string" required="true" isPrimaryName="true" />
+					<field id="nome" name="Nome" dataType="string" required="true" isPrimaryName="true" isSearchable="true" />
 					<field id="logo" name="Logo" dataType="media" required="true" />
 					<field id="imagemSecundaria" name="Imagem Secundária" dataType="media" />
 					<field id="bannerDetalhe" name="Banner Detalhe" dataType="media" required="true" />
