@@ -3,7 +3,7 @@
   <id>4028817279337EE00179339093663AC0</id>
   <name>Acervos de Conteúdo</name>
   <description>Permite cadastrar Acervos de Conteúdo</description>
-  <service-id>com.essia.website.service.acervosdeconteudo</service-id>
+  <service-id>br.com.essia.website.service.acervosdeconteudo</service-id>
   <rest-short-name>acervos</rest-short-name>
   <rest-enabled>true</rest-enabled>
   <workflow>lumis.standardworkflow</workflow>

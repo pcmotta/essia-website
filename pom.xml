@@ -4,7 +4,7 @@
   <artifactId>website</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <build>
-  	<finalName>com.essia.website-${build.number}</finalName>
+  	<finalName>br.com.essia.website-${build.number}</finalName>
     <sourceDirectory>src</sourceDirectory>
     <defaultGoal>package</defaultGoal>
     <resources>

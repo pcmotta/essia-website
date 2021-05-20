@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <service-instance version="7.0">
-  <id>4028817279147A00017919C63CE36E76</id>
-  <name>Depoimentos</name>
-  <description>Permite cadastrar depoimentos de usuários</description>
-  <service-id>com.essia.website.service.depoimentos</service-id>
+  <id>4028817279147A00017918D28A960FEE</id>
+  <name>Escolas</name>
+  <description></description>
+  <service-id>br.com.essia.website.service.escolas</service-id>
   <workflow>lumis.standardworkflow</workflow>
   <workflow-permissions>
     <workflow-permission principal-id="00000000C00000000000000000000003">

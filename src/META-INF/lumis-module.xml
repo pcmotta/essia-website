@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lumis-module xmlns="http://www.lumis.com.br/lumisportal/xsd/module">
-	<id>com.essia.website</id>
+	<id>br.com.essia.website</id>
 	<version>1.0</version>
 	<display-name>Essia Website</display-name>
 </lumis-module>

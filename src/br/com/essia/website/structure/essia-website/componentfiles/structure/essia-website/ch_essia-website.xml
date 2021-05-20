@@ -31,7 +31,7 @@
   </property-bag>
   <inherit-theme>false</inherit-theme>
   <themes>
-    <theme>com.essia.website.theme.essia-website</theme>
+    <theme>br.com.essia.website.theme.essia-website</theme>
   </themes>
   <locale>
     <detect-locale-from-user-browser>false</detect-locale-from-user-browser>

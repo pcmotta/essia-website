@@ -1,4 +1,4 @@
-package com.essia.website.service.acervosdeconteudo.models;
+package br.com.essia.website.service.acervosdeconteudo.models;
 
 public enum Serie 
 {

@@ -91,7 +91,7 @@
 					</filters>
 					<maxRows>-1</maxRows>
 					<postLoadProcessors>
-						<postLoadProcessor className="com.essia.website.service.acervosdeconteudo.postload.GetLivrosPostLoadProcessor" />
+						<postLoadProcessor className="br.com.essia.website.service.acervosdeconteudo.postload.GetLivrosPostLoadProcessor" />
 					</postLoadProcessors>
 				</source>
 			</sources>
