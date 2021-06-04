@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>4028817279CD5B6F0179CD707E4D0561</id>
+  <name>Landing Pages</name>
+  <description>Permite ao perfil publicador criar novos canais dado um template de canal.  Esse serviço pode ser usado para gerar Landing Pages, Hot sites etc.</description>
+  <service-id>lumis.service.channelgenerator</service-id>
+</service-instance>

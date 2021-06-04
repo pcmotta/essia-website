@@ -1,6 +1,6 @@
 package br.com.essia.website.service.acervosdeconteudo.models;
 
-public enum Disciplina 
+public enum Disciplina
 {
 	GEOGRAFIA("Geografia"),
 	HISTORIA("Historia");

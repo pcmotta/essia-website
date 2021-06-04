@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-instance version="7.0">
+  <id>4028817279CD5B6F0179CD5C3E1F011A</id>
+  <name>Selecionador de Idioma</name>
+  <description>Serviço de seleção de idioma do usuário atual.</description>
+  <service-id>lumis.service.locale</service-id>
+</service-instance>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel version="7.0">
+  <id>4028817279CD5B6F0179CE6274FB1440</id>
+  <name>Landing Pages</name>
+  <friendly-url-specific-pattern-enabled>true</friendly-url-specific-pattern-enabled>
+  <friendly-url-specific-pattern>${paramsPath}</friendly-url-specific-pattern>
+  <locale>
+    <detect-locale-from-user-browser>false</detect-locale-from-user-browser>
+    <supported-locales>
+      <locale>pt_BR</locale>
+    </supported-locales>
+  </locale>
+</channel>

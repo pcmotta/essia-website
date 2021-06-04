@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <service-instance version="7.0">
-  <id>2C93808A78D9F96F017903F70B42459C</id>
-  <name>Página Inicial</name>
+  <id>4028817279CD5B6F0179CD7BA03D0838</id>
+  <name>Conteúdo HTML</name>
   <description>Permite publicar conteúdos Html.</description>
   <service-id>lumis.service.htmlcontent</service-id>
   <workflow>lumis.standardworkflow</workflow>
@@ -16,9 +16,6 @@
     <dependency type="document_repository">
       <service-instance-id>2C93808A78D9F96F017903E30F4B25C7</service-instance-id>
     </dependency>
-    <dependency type="htmltemplate_repository">
-      <service-instance-id>402881727966A0A1017966A1F3290024</service-instance-id>
-    </dependency>
     <dependency type="media_repository">
       <service-instance-id>2C93808A78D9F96F017903E3135425CD</service-instance-id>
     </dependency>
@@ -26,10 +23,4 @@
       <service-instance-id>2C93808A78D9F96F01790448EF80679B</service-instance-id>
     </dependency>
   </dependencies>
-  <property-bag>
-    <property name="lumis.doui.control.htmleditor.htmlsnippet#templates">
-      <private>true</private>
-      <default-values/>
-    </property>
-  </property-bag>
 </service-instance>

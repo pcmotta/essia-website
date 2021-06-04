@@ -1,6 +1,6 @@
 package br.com.essia.website.service.acervosdeconteudo.models;
 
-public enum Segmento 
+public enum Segmento
 {
 	FUNDAMENTAL1("Ensino Fundamental 1"),
 	FUNDAMENTAL2("Ensino Fundamental 2"),

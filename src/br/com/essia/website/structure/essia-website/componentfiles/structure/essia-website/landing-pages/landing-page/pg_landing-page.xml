@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page version="7.0">
+  <id>4028817279CD5B6F0179CD78BDCE0703</id>
+  <name>Landing Page</name>
+  <hidden>true</hidden>
+  <layout-type>LAYOUT_FILE</layout-type>
+  <layout-file>template-landing.html</layout-file>
+  <layout><![CDATA[<layout><holder id="content"><interface id="4028817279CD5B6F0179CE5E7189114B"/></holder><holder id="footermedia"><interface id="4028817279CD5B6F0179CE5E718B114C"/></holder><holder id="footermenu"><interface id="4028817279CD5B6F0179CE5E718D114D"/></holder><holder id="footerapps"><interface id="4028817279CD5B6F0179CE5E718F114E"/></holder></layout>]]></layout>
+  <interface-instances>
+    <interface-instance>
+      <id>4028817279CD5B6F0179CE5E7189114B</id>
+      <service-instance-id>4028817279CD5B6F0179CD7BA03D0838</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279CD5B6F0179CE5E718B114C</id>
+      <service-instance-id>4028817279470E870179488D1BCA3358</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279CD5B6F0179CE5E718D114D</id>
+      <service-instance-id>2C93808A78D9F96F01790402F05D4F3F</service-instance-id>
+      <interface-id>lumis.service.hierarchicalcontent.contentMenu</interface-id>
+      <applied-interface-style-id>4028817279147A00017919E3A1E7003D</applied-interface-style-id>
+    </interface-instance>
+    <interface-instance>
+      <id>4028817279CD5B6F0179CE5E718F114E</id>
+      <service-instance-id>4028817279470E87017948913F84382B</service-instance-id>
+      <interface-id>lumis.service.htmlcontent.content</interface-id>
+    </interface-instance>
+  </interface-instances>
+</page>

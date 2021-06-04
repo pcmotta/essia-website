@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel version="7.0">
+  <id>4028817279CD5B6F0179CD78BDC006FA</id>
+  <name>Landing Page</name>
+  <template>true</template>
+  <inherit-page-template>false</inherit-page-template>
+  <layout-pages-type>LAYOUT_FILE</layout-pages-type>
+  <layout-file>template.html</layout-file>
+  <locale>
+    <detect-locale-from-user-browser>false</detect-locale-from-user-browser>
+    <supported-locales>
+      <locale>pt_BR</locale>
+    </supported-locales>
+  </locale>
+</channel>

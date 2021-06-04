@@ -1,9 +1,9 @@
 package br.com.essia.website.service.acervosdeconteudo.models;
 
-public enum Serie 
+public enum Serie
 {
-	ANO1("1ยบ Ano"),
-	ANO2("2ยบ Ano");
+	ANO1("1บ Ano"),
+	ANO2("2บ Ano");
 	
 	String descricao;
 	
