@@ -4,4 +4,7 @@
 	<string id="STR_SERVICE_DESCRIPTION"><![CDATA[Permite o envio de contato]]></string>
 	
 	<string id="STR_FORM"><![CDATA[Formulário de Contato]]></string>
+	
+	<string id="STR_FORM_CONTATO"><![CDATA[Formulário de Contato]]></string>
+	<string id="STR_FORM_REDUZIDO"><![CDATA[Formulário Reduzido]]></string>
 </strings>

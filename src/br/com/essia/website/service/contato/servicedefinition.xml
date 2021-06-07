@@ -4,11 +4,12 @@
 		<description>STR_SERVICE_DESCRIPTION</description>			
 	</service>
   
-  <interfaces>
-  	<interface name="STR_FORM" id="form" type="lum_styled"> 
-		<styles>
-			<style name="STR_FOR" path="styles/form.js" id="form" />
-		</styles>  	
-  	</interface>
-  </interfaces>
+	<interfaces>
+		<interface name="STR_FORM" id="form" type="lum_styled"> 
+			<styles>
+				<style name="STR_FORM_CONTATO" path="styles/form.js" id="form" isDefault="true" />
+				<style name="STR_FORM_REDUZIDO" path="styles/formReduzido.js" id="formReduzido" />
+			</styles>  	
+		</interface>
+	</interfaces>
 </serviceDefinition>
