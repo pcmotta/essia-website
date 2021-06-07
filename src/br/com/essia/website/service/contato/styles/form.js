@@ -82,6 +82,11 @@ function submeter () {
 			$('#form-response-text').text(message)
 			$('#form-response').show()
 			$('#form-contato').hide()
+		},
+		error: function () {
+			$('#form-response-text').text('Ocorreu um erro. Tente novamente mais tarde')
+			$('#form-response').show()
+			$('#form-contato').hide()
 		}
 	})
 }

@@ -16,6 +16,9 @@
     <dependency type="document_repository">
       <service-instance-id>2C93808A78D9F96F017903E30F4B25C7</service-instance-id>
     </dependency>
+    <dependency type="htmltemplate_repository">
+      <service-instance-id>402881727966A0A1017966A1F3290024</service-instance-id>
+    </dependency>
     <dependency type="media_repository">
       <service-instance-id>2C93808A78D9F96F017903E3135425CD</service-instance-id>
     </dependency>
