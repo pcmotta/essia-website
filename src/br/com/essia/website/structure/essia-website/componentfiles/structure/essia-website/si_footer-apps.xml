@@ -26,9 +26,7 @@
   <property-bag>
     <property name="lumis.doui.control.htmleditor.htmlsnippet#templates">
       <private>true</private>
-      <default-values>
-        <value>{&quot;id&quot;:&quot;4028817279470E8701794891DB7338F1&quot;,&quot;sourceId&quot;:&quot;htmlContent&quot;,&quot;fieldId&quot;:&quot;content&quot;,&quot;title&quot;:&quot;Footer Apps&quot;,&quot;image&quot;:null,&quot;htmlContent&quot;:&quot;&lt;div class=\&quot;footer-right\&quot;&gt; \n        &lt;p&gt;Baixe o App da Essia.&lt;/p&gt; \n        &lt;a href=\&quot;#\&quot;&gt;&lt;img src=\&quot;assets/img/app-store-download.png\&quot; alt=\&quot;\&quot; /&gt;&lt;/a&gt; \n        &lt;a href=\&quot;#\&quot;&gt;&lt;img src=\&quot;assets/img/google-play-download.png\&quot; alt=\&quot;\&quot; /&gt;&lt;/a&gt; \n       &lt;/div&gt;&quot;}</value>
-      </default-values>
+      <default-values/>
     </property>
   </property-bag>
 </service-instance>

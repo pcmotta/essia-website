@@ -26,9 +26,7 @@
   <property-bag>
     <property name="lumis.doui.control.htmleditor.htmlsnippet#templates">
       <private>true</private>
-      <default-values>
-        <value>{&quot;id&quot;:&quot;4028817279470E870179488E4C4F33A5&quot;,&quot;sourceId&quot;:&quot;htmlContent&quot;,&quot;fieldId&quot;:&quot;content&quot;,&quot;title&quot;:&quot;Footer (Logo, Redes Sociais, Contato)&quot;,&quot;image&quot;:null,&quot;htmlContent&quot;:&quot;&lt;!-- Footer Logo Start --&gt; \n       &lt;div class=\&quot;footer-logo\&quot;&gt; \n        &lt;img src=\&quot;assets/img/footer-logo.png\&quot; alt=\&quot;footer logo\&quot; /&gt; \n       &lt;/div&gt; \n       &lt;!-- /Footer Logo  end--&gt; \n       &lt;!-- Footer social links Start --&gt; \n       &lt;div class=\&quot;social-links\&quot;&gt; \n        &lt;ul&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-facebook\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-linkedin\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-instagram\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n         &lt;li&gt;&lt;a href=\&quot;#\&quot;&gt;&lt;i class=\&quot;fa fa-twitter\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt; \n        &lt;/ul&gt; \n       &lt;/div&gt; \n       &lt;!-- /Footer social links Start --&gt; \n       &lt;div class=\&quot;footer-cont-btn\&quot;&gt; \n        &lt;a href=\&quot;#\&quot;&gt;Entre em contato&lt;/a&gt; \n       &lt;/div&gt;&quot;}</value>
-      </default-values>
+      <default-values/>
     </property>
   </property-bag>
 </service-instance>
