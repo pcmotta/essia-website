@@ -32,21 +32,45 @@
 					<field id="colecao" name="Coleção" dataType="string" isSearchable="true" />
 					<field id="disciplina" name="Disciplina" dataType="string" isSearchable="true" >
 						<options>
+							<option value="BIOLOGIA">Biologia</option>
+							<option value="CIENCIAS">Ciências</option>
+							<option value="CIENCIASNATUREZA">Ciências da Natureza</option>
+							<option value="CIENCIASHUMANAS">Ciências Humanas</option>
+							<option value="EMPREENDEDORISMO">Empreendedorismo</option>
+							<option value="ESPANHOL">Espanhol</option>
+							<option value="FILOSOFIA">Filosofia</option>
+							<option value="FISICA">Física</option>
 							<option value="GEOGRAFIA">Geografia</option>
+							<option value="GRAMATICA">Gramática</option>
 							<option value="HISTORIA">História</option>
+							<option value="INGLES">Inglês</option>
+							<option value="LITERATURA">Literatura</option>
+							<option value="MATEMATICA">Matemática</option>
+							<option value="PORTUGUES">Português</option>
+							<option value="PROJETOVIDA">Projeto de Vida</option>
+							<option value="QUIMICA">Quimica</option>
+							<option value="REDACAO">Redação</option>
+							<option value="SOCIOLOGIA">Sociologia</option>
 						</options>
 					</field>
 					<field id="segmento" name="Segmento" dataType="string" isSearchable="true" >
 						<options>
-							<option value="FUNDAMENTAL1">Ensino Fundamental 1</option>
-							<option value="FUNDAMENTAL2">Ensino Fundamental 2</option>
+							<option value="FUNDAMENTALI">Ensino Fundamental I</option>
+							<option value="FUNDAMENTALII">Ensino Fundamental II</option>
 							<option value="MEDIO">Ensino Médio</option>
 						</options>
 					</field>
 					<field id="serie" name="Série" dataType="string" isSearchable="true" >
 						<options>
-							<option value="ANO1">1 Ano</option>
-							<option value="ANO2">2 Ano</option>
+							<option value="ANO1">1º Ano</option>
+							<option value="ANO2">2º Ano</option>
+							<option value="ANO3">3º Ano</option>
+							<option value="ANO4">4º Ano</option>
+							<option value="ANO5">5º Ano</option>
+							<option value="ANO6">6º Ano</option>
+							<option value="ANO7">7º Ano</option>
+							<option value="ANO8">8º Ano</option>
+							<option value="ANO9">9º Ano</option>
 						</options>
 					</field>
 					<field id="link" name="Link" dataType="string" required="true" />
@@ -147,6 +171,11 @@
 			<controls>
 				<control:lum_autoLayoutDetails sourceId="acervos" />
 				<control:lum_list sourceId="livros" />
+				<control:lum_autoLayoutFields sourceId="livros">
+					<field id="disciplina" />
+					<field id="serie" />
+					<field id="segmento" />
+				</control:lum_autoLayoutFields>
 			</controls>
 		</interface>
 		

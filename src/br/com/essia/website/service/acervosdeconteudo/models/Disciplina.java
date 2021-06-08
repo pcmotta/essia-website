@@ -3,23 +3,23 @@ package br.com.essia.website.service.acervosdeconteudo.models;
 public enum Disciplina
 {
 	BIOLOGIA("Biologia"),
-	CIENCIAS("Ciências"),
-	CIENCIASNATUREZA("Ciências da Natureza"),
-	CIENCIASHUMANAS("Ciências Humanas"),
+	CIENCIAS("CiÃªncias"),
+	CIENCIASNATUREZA("CiÃªncias da Natureza"),
+	CIENCIASHUMANAS("CiÃªncias Humanas"),
 	EMPREENDEDORISMO("Empreendedorismo"),
 	ESPANHOL("Espanhol"),
 	FILOSOFIA("Filosofia"),
-	FISICA("Física"),
+	FISICA("FÃ­sica"),
 	GEOGRAFIA("Geografia"),
-	GRAMATICA("Gramática"),
+	GRAMATICA("GramÃ¡tica"),
 	HISTORIA("Historia"),
-	INGLES("Inglês"),
+	INGLES("InglÃªs"),
 	LITERATURA("Literatura"),
-	MATEMATICA("Matemática"),
-	PORTUGUES("Português"),
+	MATEMATICA("MatemÃ¡tica"),
+	PORTUGUES("PortuguÃªs"),
 	PROJETOVIDA("Projeto de Vida"),
-	QUIMICA("Química"),
-	REDACAO("Redação"),
+	QUIMICA("Quimica"),
+	REDACAO("RedaÃ§Ã£o"),
 	SOCIOLOGIA("Sociologia");
 	
 	String descricao;

@@ -59,15 +59,23 @@ ${lum_beforeWrite('<script type="text/javascript" src="lumis/tool/jquery/jquery.
 		<div class="row">
 			<%
 			if (editora.exibeFiltroSegmento == 'true') {
+				var segmentos = lum_xpath.selectNodes("/renderData/controls/control[@id='autoLayoutFields']/field[@id='segmento']/value/control[@id='segmento']/data/option");
 			%>
 			<div class="col-lg-3">
 				<div class="select-fileter-1 blog-filter mt-30">
 					<label for="select_1">SEGMENTO</label>
 					<select class="form-select" id="select_segmento" aria-label="Default select example">
 						<option selected value="">Todos</option>
-						<option value="FUNDAMENTAL1">Ensino Fundamental 1</option>
-						<option value="FUNDAMENTAL2">Ensino Fundamental 2</option>
-						<option value="MEDIO">Ensino Médio</option>
+						<%
+							for (var seg in segmentos) {
+								var segmento = lum_xpath.toMap(segmentos[seg])
+								if (segmento.text !== '') {
+						%>
+						<option value="<%=segmento.value%>"><%=segmento.text%></option>
+						<%
+								}
+							}
+						%>
 					</select>
 				</div>
 			</div>
@@ -75,14 +83,23 @@ ${lum_beforeWrite('<script type="text/javascript" src="lumis/tool/jquery/jquery.
 			}
 			
 			if (editora.exibeFiltroSerie == 'true') {
+				var series = lum_xpath.selectNodes("/renderData/controls/control[@id='autoLayoutFields']/field[@id='serie']/value/control[@id='serie']/data/option");
 			%>
 			<div class="col-lg-3">
 				<div class="select-fileter-2 blog-filter mt-30">
 					<label for="select_2">SÉRIE</label>
-					<select class="form-select" id="select_serie" aria-label="Default select example">
+					<select class="form-select" id="select_serie" aria-label="Séries">
 						<option selected value="">Todas</option>
-						<option value="ANO1">1º Ano</option>
-						<option value="ANO2">2º Ano</option>
+						<%
+							for (var s in series) {
+								var serie = lum_xpath.toMap(series[s])
+								if (serie.text !== '') {
+						%>
+							<option value="<%=serie.value%>"><%=serie.text%></option>
+						<%
+								}
+							}
+						%>
 					</select>
 				</div>
 			</div>
@@ -90,14 +107,23 @@ ${lum_beforeWrite('<script type="text/javascript" src="lumis/tool/jquery/jquery.
 			}
 			
 			if (editora.exibeFiltroDisciplina == 'true') {
+				var disciplinas = lum_xpath.selectNodes("/renderData/controls/control[@id='autoLayoutFields']/field[@id='disciplina']/value/control[@id='disciplina']/data/option");
 			%>
 			<div class="col-lg-3">
 				<div class="select-fileter-1 blog-filter mt-30">
 					<label for="select_1">DISCIPLINA</label>
-					<select class="form-select" id="select_disciplina" aria-label="Default select example">
+					<select class="form-select" id="select_disciplina" aria-label="Disciplinas">
 						<option selected value="">Todas</option>
-						<option value="GEOGRAFIA">Geografia</option>
-						<option value="HISTORIA">História</option>
+						<%
+							for (var d in disciplinas) {
+								var disciplina = lum_xpath.toMap(disciplinas[d])
+								if (disciplina.text !== '') {
+						%>
+							<option value="<%=disciplina.value%>"><%=disciplina.text%></option>
+						<%
+								}
+							}
+						%>
 					</select>
 				</div>
 			</div>

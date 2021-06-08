@@ -40,4 +40,6 @@ $(document).ready(function(){
 			}
 		}
 	});
+	
+	$('article.lum-content header.lum-content-header').remove()
 })

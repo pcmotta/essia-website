@@ -1,7 +1,7 @@
 ${lum_beforeWrite('<script type="text/javascript" src="lumis-theme/br/com/essia/website/theme/essia-website/assets/js/validator/jquery.validate.js"></script>', 'jquery.validate.js')}
 ${lum_beforeWrite('<script type="text/javascript" src="lumis-theme/br/com/essia/website/theme/essia-website/assets/js/validator/messages_pt_BR.js"></script>', 'messages_pt_BR.js')}
 
-<form action="javascript:;" id="form-contato">
+<form action="javascript:;" id="form-contato" class="contact-inner">
 	<div class="form-group">
 		<input type="text" name="firstname" class="form-control" placeholder="Nome">
 	</div>
